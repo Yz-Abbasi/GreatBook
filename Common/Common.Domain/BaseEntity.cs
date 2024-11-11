@@ -1,8 +1,8 @@
-namespace Clean_arch.Domain.Shared
+﻿namespace Common.Domain
 {
     public class BaseEntity
     {
-        public long Id { get; private set; }
+        public long Id { get; set; }
         public DateTime CreationDate { get; }
 
         public BaseEntity()

@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using Common.Domain;
 
-namespace Clean_arch.Domain.Shared
+namespace Common.Domain
 {
     public class AggregateRoot : BaseEntity
     {
