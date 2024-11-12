@@ -74,6 +74,7 @@ namespace Shop.Domain.UserAgg
 
         public void ChargeWallet(Wallet wallet) // Placeholder function, the logic will definitely change later on
         {
+            wallet.UserId = Id;
             Wallets.Add(wallet);
         }
 

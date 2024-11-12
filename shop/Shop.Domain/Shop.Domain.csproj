@@ -5,6 +5,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="OrderAgg\" />
+    <Folder Include="OrderAgg\Enums\" />
+    <Folder Include="OrderAgg\Events\" />
+    <Folder Include="OrderAgg\ValueObjects\" />
     <Folder Include="UserAgg\" />
     <Folder Include="UserAgg\Enums\" />
     <Folder Include="UserAgg\Services\" />
