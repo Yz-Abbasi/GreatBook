@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Clean_arch.Domain.Shared.Exceptions;
+using Common.Domain;
 
 namespace Shop.Domain.RoleAgg
 {
-    public class Role
+    public class Role : AggregateRoot
     {
         public string Title { get; private set; }
         public List<RolePermission> Permissions { get; private set; }
@@ -43,8 +44,7 @@ namespace Shop.Domain.RoleAgg
 
         public void Guard(string title)
         {
-            if(title == null)
-                throw new InvalidDomainDataException("Title is null!");
+            NullOrEmptyDomainDataException.CheckString(title, nameof(title));
         }
     }
 }
