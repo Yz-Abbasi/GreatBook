@@ -12,6 +12,7 @@
     <Folder Include="RoleAgg\" />
     <Folder Include="RoleAgg\Enums\" />
     <Folder Include="SellerAgg\" />
+    <Folder Include="SellerAgg\Enums\" />
     <Folder Include="UserAgg\" />
     <Folder Include="UserAgg\Enums\" />
     <Folder Include="UserAgg\Services\" />
