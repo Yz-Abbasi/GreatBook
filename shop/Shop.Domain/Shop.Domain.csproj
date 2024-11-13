@@ -9,6 +9,8 @@
     <Folder Include="OrderAgg\Enums\" />
     <Folder Include="OrderAgg\Events\" />
     <Folder Include="OrderAgg\ValueObjects\" />
+    <Folder Include="ProductAgg\" />
+    <Folder Include="ProductAgg\DomainServices\" />
     <Folder Include="RoleAgg\" />
     <Folder Include="RoleAgg\Enums\" />
     <Folder Include="SellerAgg\" />
