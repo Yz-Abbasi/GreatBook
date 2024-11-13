@@ -5,6 +5,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="CategoryAgg\" />
+    <Folder Include="CategoryAgg\Services\" />
+    <Folder Include="CommemtAgg\" />
+    <Folder Include="CommemtAgg\Enums\" />
     <Folder Include="OrderAgg\" />
     <Folder Include="OrderAgg\Enums\" />
     <Folder Include="OrderAgg\Events\" />
@@ -15,6 +19,7 @@
     <Folder Include="RoleAgg\Enums\" />
     <Folder Include="SellerAgg\" />
     <Folder Include="SellerAgg\Enums\" />
+    <Folder Include="SiteEntities\" />
     <Folder Include="UserAgg\" />
     <Folder Include="UserAgg\Enums\" />
     <Folder Include="UserAgg\Services\" />
