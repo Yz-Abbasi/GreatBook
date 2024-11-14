@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Clean_arch.Domain.Shared.Exceptions;
-using Shop.Domain.CommemtAgg.Enums;
+using Common.Domain;
+using Shop.Domain.CommentAgg.Enums;
 
-namespace Shop.Domain.CommemtAgg
+namespace Shop.Domain.CommentAgg
 {
-    public class Comment
+    public class Comment : AggregateRoot
     {
         public long UserId { get; private set; }
         public long ProductId { get; private set; }
