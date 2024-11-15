@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="EmailUtil\" />
+    <Folder Include="FileUtil\" />
+    <Folder Include="FileUtil\Interfaces\" />
+    <Folder Include="FileUtil\Services\" />
+    <Folder Include="SecurityUtil\" />
+    <Folder Include="UserUtil\" />
+    <Folder Include="Validations\" />
+    <Folder Include="Validations\CustomValidation\IFormFile\" />
+    <Folder Include="Validations\FluentValidations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.6" />
+    <PackageReference Include="HtmlSanitizer" Version="8.1.870" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

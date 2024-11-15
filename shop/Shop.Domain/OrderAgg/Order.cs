@@ -7,6 +7,15 @@ namespace Shop.Domain.OrderAgg
 {
     public class Order : AggregateRoot
     {
+        public long UserId { get; private set; }
+        public OrderStatus Status { get; private set; }
+        public DateTime LastUpdate { get; private set; }
+        public List<OrderItem> Items { get; private set; }
+        public ShippingMethod? ShippingMethod { get; private set; }
+        public OrderAddress? OrderAddress { get; private set; }
+        public OrderDiscount? Discount { get; private set; }
+
+
         private Order()
         {
 
@@ -19,13 +28,7 @@ namespace Shop.Domain.OrderAgg
             Items = new List<OrderItem>();
         }
 
-        public long UserId { get; private set; }
-        public OrderStatus Status { get; private set; }
-        public DateTime LastUpdate { get; private set; }
-        public List<OrderItem> Items { get; private set; }
-        public ShippingMethod? ShippingMethod { get; private set; }
-        public OrderAddress? OrderAddress { get; private set; }
-        public OrderDiscount? Discount { get; private set; }
+
         public int TotalPrice 
         { get
             {
