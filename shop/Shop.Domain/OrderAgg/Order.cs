@@ -45,11 +45,22 @@ namespace Shop.Domain.OrderAgg
 
         public void AddItem(OrderItem item)
         {
+            ChangeOrderGuard();
+            
+            var oldItem = Items.FirstOrDefault(f => f.InventoryId == item.InventoryId);
+            if(oldItem != null)
+            {
+                oldItem.ChangeCount(item.Count + oldItem.Count);
+                return ;
+            }
+
             Items.Add(item);
         }
 
         public void RemoveItem(long itemId)
         {
+            ChangeOrderGuard();
+
             var currentItem = Items.FirstOrDefault(f => f.Id == itemId);
             
             if(currentItem != null)
@@ -63,6 +74,8 @@ namespace Shop.Domain.OrderAgg
 
         public void ChangeItemCount(long itemId, int newCount)
         {
+            ChangeOrderGuard();
+
             var currentItem = Items.FirstOrDefault(f => f.Id == itemId);
             if(currentItem == null)
                 throw new InvalidDomainDataException("Item doesn't exist!");
@@ -78,7 +91,15 @@ namespace Shop.Domain.OrderAgg
 
         public void Checkout(OrderAddress orderAddress)
         {
+            ChangeOrderGuard();
+            
             OrderAddress = orderAddress;
+        }
+
+        public void ChangeOrderGuard()
+        {
+            if(Status != OrderStatus.Pending)
+                throw new InvalidDomainDataException("Can't add product to this order!");
         }
     }
 }
