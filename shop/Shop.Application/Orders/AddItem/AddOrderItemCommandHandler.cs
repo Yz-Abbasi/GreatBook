@@ -8,7 +8,7 @@ using Shop.Domain.OrderAgg.Repository;
 using Shop.Domain.SellerAgg.Repository;
 
 namespace Shop.Application.Orders.AddItem
-{
+{   
     public class AddOrderItemCommandHandler : IBaseCommandHandler<AddOrderItemCommand>
     {
         private readonly IOrderRepository _repository;

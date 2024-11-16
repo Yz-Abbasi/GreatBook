@@ -25,7 +25,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\Common.Domain.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\Common.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

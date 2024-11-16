@@ -83,6 +83,28 @@ namespace Shop.Domain.OrderAgg
             currentItem.ChangeCount(newCount);
         }
 
+        public void IncreaseItemCount(long itemId, int count)
+        {
+            ChangeOrderGuard();
+
+            var currentItem = Items.FirstOrDefault(f => f.Id == itemId);
+            if(currentItem == null)
+                throw new InvalidDomainDataException("Item doesn't exist!");
+
+            currentItem.IncreaseCount(count);
+        }
+
+        public void DecreaseItemCount(long itemId, int count)
+        {
+            ChangeOrderGuard();
+
+            var currentItem = Items.FirstOrDefault(f => f.Id == itemId);
+            if(currentItem == null)
+                throw new InvalidDomainDataException("Item doesn't exist!");
+
+            currentItem.DecreaseCount(count);
+        }
+
         public void ChangeStatus(OrderStatus status)
         {
             Status = status;
@@ -99,7 +121,7 @@ namespace Shop.Domain.OrderAgg
         public void ChangeOrderGuard()
         {
             if(Status != OrderStatus.Pending)
-                throw new InvalidDomainDataException("Can't add product to this order!");
+                throw new InvalidDomainDataException("Can't edit this order!");
         }
     }
 }
