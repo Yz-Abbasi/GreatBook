@@ -52,6 +52,7 @@
     <Folder Include="Users\EditAddress\" />
     <Folder Include="Users\Edit\" />
     <Folder Include="Users\Register\" />
+    <Folder Include="_Utilities\" />
   </ItemGroup>
 
   <ItemGroup>
