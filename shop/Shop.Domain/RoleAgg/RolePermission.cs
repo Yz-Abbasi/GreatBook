@@ -9,7 +9,12 @@ namespace Shop.Domain.RoleAgg
 {
     public class RolePermission : BaseEntity
     {
-        public long Roleid { get; private set; }
+        public RolePermission(Permission permission)
+        {
+            Permission = permission;
+        }
+
+        public long Roleid { get; internal set; }
         public Permission Permission { get; private set; }
 
     }
