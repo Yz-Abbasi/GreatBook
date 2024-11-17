@@ -69,13 +69,15 @@ namespace Shop.Domain.ProductAgg
             Images.Add(image);
         }
 
-        public void RemoveImage(long imageId)
+        public string RemoveImage(long imageId)
         {
             var image = Images.FirstOrDefault(f => f.Id == Id);
             if(image == null)
-                return ;
+                throw new NullOrEmptyDomainDataException("Can't find the image!");
             
             Images.Remove(image);
+            
+            return image.ImageName;
         }
 
         public void SetSpecification(List<ProductSpecifcation> specifcations)
