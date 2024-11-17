@@ -32,7 +32,7 @@ namespace Shop.Domain.ProductAgg
         public Product(string title, string imageName, string description, long categoryid, long subCategoryid, long secondarySubCategoryid, string slug, SeoData seoData,
         IProductDomainService domainService)
         {
-            Guard(title, slug, imageName, description, domainService);
+            Guard(title, slug, description, domainService);
             Title = title;
             ImageName = imageName;
             Description = description;
@@ -44,18 +44,24 @@ namespace Shop.Domain.ProductAgg
         }
 
 
-        public void EditProduct(string title, string imageName, string description, long categoryid, long subCategoryid, long secondarySubCategoryid, string slug, SeoData seoData,
+        public void EditProduct(string title, string description, long categoryid, long subCategoryid, long secondarySubCategoryid, string slug, SeoData seoData,
         IProductDomainService domainService)
         {
-            Guard(title, slug, imageName, description, domainService);
+            Guard(title, slug, description, domainService);
             Title = title;
-            ImageName = imageName;
+            // ImageName = imageName;
             Description = description;
             Categoryid = categoryid;
             SubCategoryid = subCategoryid;
             SecondarySubCategoryid = secondarySubCategoryid;
             Slug = slug.ToSlug();
             SeoData = seoData;
+        }
+
+        public void SetProductImage(string imageName)
+        {
+            NullOrEmptyDomainDataException.CheckString(imageName, nameof(imageName));
+            ImageName = imageName;
         }
 
         public void AddImage(ProductImage image)
@@ -78,10 +84,10 @@ namespace Shop.Domain.ProductAgg
             Specifications = specifcations;
         }
 
-        public void Guard(string title,string slug, string imageName, string description, IProductDomainService domainService)
+        public void Guard(string title,string slug, string description, IProductDomainService domainService)
         {
             NullOrEmptyDomainDataException.CheckString(title, nameof(title));
-            NullOrEmptyDomainDataException.CheckString(imageName, nameof(imageName));
+            // NullOrEmptyDomainDataException.CheckString(imageName, nameof(imageName));
             NullOrEmptyDomainDataException.CheckString(description, nameof(description));
             NullOrEmptyDomainDataException.CheckString(slug, nameof(slug));
 
