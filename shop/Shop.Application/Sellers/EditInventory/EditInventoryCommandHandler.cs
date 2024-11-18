@@ -16,7 +16,7 @@ namespace Shop.Application.Sellers.EditInventory
         {
             var seller = await _repository.GetTracking(request.SellerId);
             if(seller == null)
-                OperationResult.NotFound();
+               return OperationResult.NotFound();
 
             seller.EditInventory(request.InventoryId, request.Count, request.Price, request.DiscountPercentage);
 

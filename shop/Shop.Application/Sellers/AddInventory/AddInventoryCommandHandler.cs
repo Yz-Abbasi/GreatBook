@@ -7,6 +7,12 @@ namespace Shop.Application.Sellers.AddInventory
     internal class AddInventoryCommandHandler : IBaseCommandHandler<AddInventoryCommand>
     {
         private readonly ISellerRepository _repository;
+
+        public AddInventoryCommandHandler(ISellerRepository repository)
+        {
+            _repository = repository;
+        }
+
         public async Task<OperationResult> Handle(AddInventoryCommand request, CancellationToken cancellationToken)
         {
             var seller = await _repository.GetTracking(request.SellerId);
