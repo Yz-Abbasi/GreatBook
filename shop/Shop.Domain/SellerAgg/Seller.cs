@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Clean_arch.Domain.Shared.Exceptions;
 using Common.Domain;
 using Shop.Domain.SellerAgg.Enums;
@@ -37,11 +33,11 @@ namespace Shop.Domain.SellerAgg
         }
 
 
-        public void ChangeStatus(SellerStatus status)
-        {
-            SellerStatus = status;
-            LastUpdate = DateTime.Now;
-        }
+        // public void ChangeStatus(SellerStatus status)
+        // {
+        //     SellerStatus = status;
+        //     LastUpdate = DateTime.Now;
+        // }
 
         public void Edit(string shopName, string nationalCode, ISellerDomainService domainService)
         {
@@ -61,24 +57,23 @@ namespace Shop.Domain.SellerAgg
             Inventories.Add(inventory);
         }
         
-        public void EditInventory(SellerInventory newInventory)
-        {
-            var selectedInventory = Inventories.FirstOrDefault(f => f.ProductId == newInventory.Id);
-            if(selectedInventory == null)
-                return ;
-
-            Inventories.Remove(selectedInventory);
-            Inventories.Add(newInventory);
-        }
-        
-        public void DeleteInventory(long inventoryId)
+        public void EditInventory(long inventoryId, int count, int price, int? discountPercentage)
         {
             var selectedInventory = Inventories.FirstOrDefault(f => f.ProductId == inventoryId);
             if(selectedInventory == null)
-                throw new InvalidDomainDataException("Inventory doesn't exist!");
-            
-            Inventories.Remove(selectedInventory);
+                throw new InvalidDomainDataException("Inventory can not be found!");
+
+            selectedInventory.Edit(count, price, discountPercentage);
         }
+        
+        // public void DeleteInventory(long inventoryId)
+        // {
+        //     var selectedInventory = Inventories.FirstOrDefault(f => f.ProductId == inventoryId);
+        //     if(selectedInventory == null)
+        //         throw new InvalidDomainDataException("Inventory doesn't exist!");
+            
+        //     Inventories.Remove(selectedInventory);
+        // }
 
         public void Guard(string shopName, string nationalCode)
         {
