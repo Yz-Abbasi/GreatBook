@@ -5,25 +5,12 @@ using System.Threading.Tasks;
 using Clean_arch.Domain.Shared.Exceptions;
 using Common.Domain;
 using Shop.Domain.SellerAgg.Enums;
+using Shop.Domain.SellerAgg.Services;
 
 namespace Shop.Domain.SellerAgg
 {
     public class Seller : AggregateRoot
     {
-        private Seller()
-        {
-            
-        }
-        public Seller(long userId, string shopName, string nationalCode)
-        {
-            Guard(shopName, nationalCode);
-
-            UserId = userId;
-            ShopName = shopName;
-            NationalCode = nationalCode;
-            Inventories = new List<SellerInventory>();
-        }
-
         public long UserId { get; private set; }
         public string ShopName { get; private set; }
         public string NationalCode { get; private set; }
@@ -32,15 +19,36 @@ namespace Shop.Domain.SellerAgg
         public List<SellerInventory> Inventories { get; private set; }
 
 
+        private Seller()
+        {
+            
+        }
+        public Seller(long userId, string shopName, string nationalCode, ISellerDomainService domainService)
+        {
+            Guard(shopName, nationalCode);
+
+            UserId = userId;
+            ShopName = shopName;
+            NationalCode = nationalCode;
+            Inventories = new List<SellerInventory>();
+
+            if(domainService.CheckSellerInfo(this) == false)
+                throw new InvalidDomainDataException("Info is invalid1");
+        }
+
+
         public void ChangeStatus(SellerStatus status)
         {
             SellerStatus = status;
             LastUpdate = DateTime.Now;
         }
 
-        public void Edit(string shopName, string nationalCode)
+        public void Edit(string shopName, string nationalCode, ISellerDomainService domainService)
         {
             Guard(shopName, nationalCode);
+            if(domainService.NationalCodeExistsInDatabase() == true)
+                throw new InvalidDomainDataException("This National has already been used before!");
+
             ShopName = shopName;
             NationalCode = nationalCode;
         }
