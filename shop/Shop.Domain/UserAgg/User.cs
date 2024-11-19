@@ -11,7 +11,7 @@ namespace Shop.Domain.UserAgg
 {
     public class User : AggregateRoot
     {
-        public User(string name, string lastName, string phoneNumber, string password, string email, Gender gender, IDomainUserService domainService)
+        public User(string name, string lastName, string phoneNumber, string password, string email, Gender gender, IUserDomainService domainService)
         {
             Guard(email, phoneNumber, domainService);
             Name = name;
@@ -20,6 +20,7 @@ namespace Shop.Domain.UserAgg
             Password = password;
             Email = email;
             Gender = gender;
+            AvatarName = "avatardefault.png";
         }
 
         public string Name { get; private set; }
@@ -28,11 +29,12 @@ namespace Shop.Domain.UserAgg
         public string Password { get; private set; }
         public string Email { get; private set; }
         public Gender Gender { get; private set; }
+        public string AvatarName { get; private set; }
         public List<UserRole> Roles { get; private set; }
         public List<UserAddress> Addresses { get; private set; }
         public List<Wallet> Wallets { get; private set; }
 
-        public void Edit(string name, string lastName, string phoneNumber, string email, Gender gender, IDomainUserService domainService)
+        public void Edit(string name, string lastName, string phoneNumber, string email, Gender gender, IUserDomainService domainService)
         {
             Guard(email, phoneNumber, domainService);
             Name = name;
@@ -42,7 +44,7 @@ namespace Shop.Domain.UserAgg
             Gender = gender;
         }
 
-        public static User RegisterUser(string phoneNumber, string email, string password, IDomainUserService domainService)
+        public static User RegisterUser(string phoneNumber, string email, string password, IUserDomainService domainService)
         {
             return new User("", "", phoneNumber, password, email, Gender.None, domainService);
         }
@@ -85,7 +87,13 @@ namespace Shop.Domain.UserAgg
             Roles.AddRange(roles);
         }
 
-        public void Guard(string email, string phoneNumber, IDomainUserService domainService)
+        public void setAvatar(string avatarName)
+        {
+            NullOrEmptyDomainDataException.CheckString(avatarName, nameof(avatarName));
+            AvatarName = avatarName;
+        }
+
+        public void Guard(string email, string phoneNumber, IUserDomainService domainService)
         {
             NullOrEmptyDomainDataException.CheckString(email, nameof(email));
             NullOrEmptyDomainDataException.CheckString(phoneNumber, nameof(phoneNumber));

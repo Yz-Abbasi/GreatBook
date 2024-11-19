@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Domain.UserAgg.Services
 {
-    public interface IDomainUserService
+    public interface IUserDomainService
     {
         public bool DoesEmailExist(string email);
         public bool DoesPhoneNumberExist(string phoneNumber);
