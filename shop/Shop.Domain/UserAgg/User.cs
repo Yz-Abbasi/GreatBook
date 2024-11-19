@@ -21,6 +21,9 @@ namespace Shop.Domain.UserAgg
             Email = email;
             Gender = gender;
             AvatarName = "avatardefault.png";
+            Roles = new();
+            Wallets= new();
+            Addresses = new();
         }
 
         public string Name { get; private set; }
@@ -57,12 +60,13 @@ namespace Shop.Domain.UserAgg
 
         public void EditAddress(UserAddress userAddress, long addressId)
         {
-            var oldAddress = Addresses.FirstOrDefault(f => f.Id == userAddress.UserId);
+            // Possible bug in the method
+            var oldAddress = Addresses.FirstOrDefault(f => f.Id == addressId);
             if (oldAddress == null)
                 throw new NullOrEmptyDomainDataException("Given address doesn't exist.");
                 
-            Addresses.Remove(oldAddress);
-            Addresses.Add(userAddress);
+            oldAddress.Edit(userAddress.Province, userAddress.City, userAddress.PostalCode, userAddress.PostalAddress, userAddress.Name, userAddress.Family, userAddress.PhoneNumber,
+            userAddress.NationalCode);
         }
         
         public void DeleteAddress(long addressId)

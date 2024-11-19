@@ -10,7 +10,7 @@ using Shop.Domain.UserAgg.Services;
 
 namespace Shop.Application.Users.Create
 {
-    public class CreateUserCommandHandler : IBaseCommandHandler<CreateUserCommand>
+    internal class CreateUserCommandHandler : IBaseCommandHandler<CreateUserCommand>
     {
         private readonly IUserRepository _repository;
         private readonly IUserDomainService _domainService;
