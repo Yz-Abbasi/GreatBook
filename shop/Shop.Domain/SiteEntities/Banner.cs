@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Clean_arch.Domain.Shared.Exceptions;
 using Common.Domain;
 using Shop.Domain.SiteEntities.Enums;
