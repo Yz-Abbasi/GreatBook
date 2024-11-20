@@ -47,9 +47,9 @@ namespace Shop.Domain.UserAgg
             Gender = gender;
         }
 
-        public static User RegisterUser(string phoneNumber, string email, string password, IUserDomainService domainService)
+        public static User RegisterUser(string phoneNumber, string password, IUserDomainService domainService)
         {
-            return new User("", "", phoneNumber, password, email, Gender.None, domainService);
+            return new User("", "", phoneNumber, password, null, Gender.None, domainService);
         }
 
         public void AddAddress(UserAddress userAddress)
