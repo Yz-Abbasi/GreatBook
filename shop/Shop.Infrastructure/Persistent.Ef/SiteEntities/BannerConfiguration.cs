@@ -12,7 +12,13 @@ namespace Shop.Infrastructure.Persistent.Ef.SiteEntities
     {
         public void Configure(EntityTypeBuilder<Banner> builder)
         {
-            throw new NotImplementedException();
+            builder.Property(p => p.ImageName)
+            .IsRequired()
+            .HasMaxLength(200);
+            
+            builder.Property(p => p.Link)
+            .IsRequired()
+            .HasMaxLength(500);
         }
     }
 }

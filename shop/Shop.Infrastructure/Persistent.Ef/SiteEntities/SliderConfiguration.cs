@@ -12,7 +12,17 @@ namespace Shop.Infrastructure.Persistent.Ef.SiteEntities
     {
         public void Configure(EntityTypeBuilder<Slider> builder)
         {
-            throw new NotImplementedException();
+            builder.Property(p => p.ImageName)
+            .IsRequired()
+            .HasMaxLength(200);
+            
+            builder.Property(p => p.Link)
+            .IsRequired()
+            .HasMaxLength(500);
+            
+            builder.Property(p => p.Title)
+            .IsRequired()
+            .HasMaxLength(500);
         }
     }
 }

@@ -8,6 +8,6 @@ namespace Shop.Domain.UserAgg.Repository
 {
     public interface IUserRepository : IBaseRepository<User>
     {
-        UserAddress GetUserAddressById(long addressId);
+        // UserAddress GetUserAddressById(long addressId);
     }
 }

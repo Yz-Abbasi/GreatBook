@@ -14,9 +14,9 @@ namespace Shop.Infrastructure.Persistent.Ef.UserAgg
         {
         }
 
-        public UserAddress GetUserAddressById(long addressId)
-        {
-            throw new NotImplementedException();
-        }
+        // public UserAddress GetUserAddressById(long addressId)
+        // {
+        //     throw new NotImplementedException();
+        // }
     }
 }

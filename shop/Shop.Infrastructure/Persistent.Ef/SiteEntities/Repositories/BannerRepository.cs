@@ -14,5 +14,10 @@ namespace Shop.Infrastructure.Persistent.Ef.SiteEntities.Repositories
         public BannerRepository(ShopContext context) : base(context)
         {
         }
+
+        public void Delete(Banner banner)
+        {
+            Context.Banners.Remove(banner);
+        }
     }
 }
