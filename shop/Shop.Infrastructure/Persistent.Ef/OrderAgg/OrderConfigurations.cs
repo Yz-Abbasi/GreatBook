@@ -9,7 +9,7 @@ using Shop.Domain.OrderAgg;
 
 namespace Shop.Infrastructure.Persistent.Ef.OrderAgg
 {
-    public class OrderConfigurations : IEntityTypeConfiguration<Order>
+    internal class OrderConfigurations : IEntityTypeConfiguration<Order>
     {
         public void Configure(EntityTypeBuilder<Order> builder)
         {
@@ -25,6 +25,41 @@ namespace Shop.Infrastructure.Persistent.Ef.OrderAgg
             {
                 option.Property(p => p.ShippimngType)
                     .HasMaxLength(50);
+            });
+
+            builder.OwnsMany(b => b.Items, option => 
+            {
+                option.ToTable("Items", "order");
+            });
+
+            builder.OwnsOne(b => b.OrderAddress, option => 
+            {
+                option.ToTable("Addresses", "order");
+                option.HasKey(b => b.Id);
+
+                option.Property(b => b.City)
+                    .HasMaxLength(50)
+                    .IsRequired();
+                    
+                option.Property(b => b.Province)
+                    .HasMaxLength(50)
+                    .IsRequired();
+                    
+                option.Property(b => b.Name)
+                    .HasMaxLength(50)
+                    .IsRequired();
+                    
+                option.Property(b => b.Family)
+                    .HasMaxLength(50)
+                    .IsRequired();
+                    
+                option.Property(b => b.NationalCode)
+                    .HasMaxLength(10)
+                    .IsRequired();
+                    
+                option.Property(b => b.PhoneNumber)
+                    .HasMaxLength(11)
+                    .IsRequired();
             });
         }
     }

@@ -15,7 +15,9 @@
     <Folder Include="Persistent.Ef\RoleAgg\" />
     <Folder Include="Persistent.Ef\SellerAgg\" />
     <Folder Include="Persistent.Ef\SiteEntities\" />
+    <Folder Include="Persistent.Ef\SiteEntities\Repositories\" />
     <Folder Include="Persistent.Ef\UserAgg\" />
+    <Folder Include="_Utilities\" />
   </ItemGroup>
 
   <ItemGroup>
