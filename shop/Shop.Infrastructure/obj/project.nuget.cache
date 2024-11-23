@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hpQqvktoZ6Y=",
+  "dgSpecHash": "tJzLJ74Mh3I=",
   "success": true,
   "projectFilePath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Infrastructure\\Shop.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\anglesharp.css\\0.17.0\\anglesharp.css.0.17.0.nupkg.sha512",
     "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
     "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\htmlsanitizer\\8.1.870\\htmlsanitizer.8.1.870.nupkg.sha512",
     "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
