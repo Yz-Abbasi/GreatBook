@@ -18,6 +18,6 @@ namespace Shop.Infrastructure.Persistent.Dapper
 
         public IDbConnection CreateConnection() => new SqlConnection(_connectionString);
 
-        public static string Inventories = "[seller].Inventories";
+        public string Inventories = "[seller].Inventories";
     }
 }
