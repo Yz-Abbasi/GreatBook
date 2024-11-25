@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "wIn1Jd/javE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Query\\Common.Query.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
