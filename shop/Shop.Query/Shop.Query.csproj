@@ -13,6 +13,9 @@
     <Folder Include="Categories\GetByParentId\" />
     <Folder Include="Categories\GetList\" />
     <Folder Include="Comments\" />
+    <Folder Include="Comments\DTOs\" />
+    <Folder Include="Comments\GetByFilter\" />
+    <Folder Include="Comments\GetById\" />
     <Folder Include="Orders\" />
     <Folder Include="Products\" />
     <Folder Include="Roles\" />

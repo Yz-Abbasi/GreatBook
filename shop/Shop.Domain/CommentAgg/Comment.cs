@@ -12,9 +12,9 @@ namespace Shop.Domain.CommentAgg
     {
         public long UserId { get; private set; }
         public long ProductId { get; private set; }
+        public string Text { get; private set; }
         public CommentStatus CommentStatus { get; private set; }
         public DateTime LastUpdate { get; private set; }
-        public string Text { get; private set; }
 
 
         public Comment(long userId, long productId, string text)
