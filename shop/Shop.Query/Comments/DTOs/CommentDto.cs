@@ -7,10 +7,10 @@ namespace Shop.Query.Comments.DTOs
     {
         public long UserId { get; set; }
         public string UserFullName { get; set; }
-        public long Productid { get; set; }
+        public long ProductId { get; set; }
         public string ProductTitle { get; set; }
-        public string Text { get; private set; }
-        public CommentStatus CommentStatus { get; private set; }
+        public string Text { get; set; }
+        public CommentStatus CommentStatus { get; set; }
     }
 
     public class CommentFilterParams : BaseFilterParam

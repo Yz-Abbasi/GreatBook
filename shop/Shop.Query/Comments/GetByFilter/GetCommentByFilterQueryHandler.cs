@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Common.Query;
+using Microsoft.EntityFrameworkCore;
 using Shop.Infrastructure.Persistent.Ef;
 using Shop.Query.Comments.DTOs;
 
@@ -35,9 +36,11 @@ namespace Shop.Query.Comments.GetByFilter
             if(@params.EndDate != null)
                 result.Where(r => r.CreationDate.Date <= @params.EndDate.Value.Date);
             
+            var skip = (@params.PageId - 1) * @params.Take;
             var model = new CommentFilterResult()
             {
-
+                Data = await result.Skip(skip).Take(@params.Take).Select(comment => comment.Map()).ToListAsync(cancellationToken),
+                FilterParam = @params
             };
             
             return model;
