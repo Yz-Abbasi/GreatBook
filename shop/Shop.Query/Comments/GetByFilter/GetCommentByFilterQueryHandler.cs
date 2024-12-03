@@ -36,10 +36,11 @@ namespace Shop.Query.Comments.GetByFilter
             if(@params.EndDate != null)
                 result.Where(r => r.CreationDate.Date <= @params.EndDate.Value.Date);
             
+            
             var skip = (@params.PageId - 1) * @params.Take;
             var model = new CommentFilterResult()
             {
-                Data = await result.Skip(skip).Take(@params.Take).Select(comment => comment.Map()).ToListAsync(cancellationToken),
+                Data = await result.Skip(skip).Take(@params.Take).Select(comment => comment.MapFilteredComment()).ToListAsync(cancellationToken),
                 FilterParam = @params
             };
             
