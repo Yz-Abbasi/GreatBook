@@ -10,7 +10,7 @@ using Shop.Query.Orders.DTOs;
 
 namespace Shop.Query.Orders.GetById
 {
-    public class GetOrderByIdQueryHandler : IQueryHandler<GetOrderByIdQuery, OrderDto>
+    public class GetOrderByIdQueryHandler : IQueryHandler<GetOrderByIdQuery, OrderDto?>
     {
         private readonly ShopContext _context;
         private readonly DapperContext _dapperContext;
@@ -21,9 +21,17 @@ namespace Shop.Query.Orders.GetById
             _dapperContext = dapperContext;
         }
 
-        public async Task<OrderDto> Handle(GetOrderByIdQuery request, CancellationToken cancellationToken)
+        public async Task<OrderDto?> Handle(GetOrderByIdQuery request, CancellationToken cancellationToken)
         {
             var order = await _context.Orders.FirstOrDefaultAsync(f => f.Id == request.OrderId, cancellationToken);
+            if(order == null)
+                return null;
+
+            var orderDto = order.Map();
+            orderDto.UserFullName = await _context.Users.Where(f => f.Id == order.UserId).Select(s => $"{s.Name} {s.LastName}").FirstAsync(cancellationToken);
+
+            orderDto.Items = await orderDto.GetOrderItems(_dapperContext);
+            return orderDto;
         }
     }
 }
