@@ -8,6 +8,10 @@ namespace Shop.Domain.OrderAgg
 {
     public class OrderAddress : BaseEntity
     {
+        private OrderAddress()
+        {
+            
+        }
         public OrderAddress(string province, string city, string postalCode, string postalAddress, string name, string family, string phoneNumber, string nationalCode)
         {
             Province = province;

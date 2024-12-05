@@ -13,7 +13,7 @@ namespace Shop.Domain.RoleAgg
         public List<RolePermission> Permissions { get; private set; }
         
 
-        public Role()
+        private Role()
         {
             
         }

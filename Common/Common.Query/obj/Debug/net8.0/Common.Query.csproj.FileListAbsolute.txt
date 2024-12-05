@@ -1,0 +1,13 @@
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\bin\Debug\net8.0\Common.Query.deps.json
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\bin\Debug\net8.0\Common.Query.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\bin\Debug\net8.0\Common.Query.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\Common.Query.csproj.AssemblyReference.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\Common.Query.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\Common.Query.AssemblyInfoInputs.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\Common.Query.AssemblyInfo.cs
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\Common.Query.csproj.CoreCompileInputs.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\Common.Query.sourcelink.json
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\Common.Query.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\refint\Common.Query.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\Common.Query.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Query\obj\Debug\net8.0\ref\Common.Query.dll

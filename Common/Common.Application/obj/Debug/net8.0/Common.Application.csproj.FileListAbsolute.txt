@@ -1,0 +1,16 @@
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\bin\Debug\net8.0\Common.Application.deps.json
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\bin\Debug\net8.0\Common.Application.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\bin\Debug\net8.0\Common.Application.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\bin\Debug\net8.0\Common.Domain.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\bin\Debug\net8.0\Common.Domain.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\Common.Application.csproj.AssemblyReference.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\Common.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\Common.Application.AssemblyInfoInputs.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\Common.Application.AssemblyInfo.cs
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\Common.Application.csproj.CoreCompileInputs.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\Common.Application.sourcelink.json
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\Common.A.58782CAF.Up2Date
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\Common.Application.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\refint\Common.Application.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\Common.Application.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Application\obj\Debug\net8.0\ref\Common.Application.dll

@@ -12,6 +12,10 @@ namespace Shop.Domain.SellerAgg
         public int Price { get; private set; }
         public int? DiscountPercentage { get; private set; }
 
+        private SellerInventory()
+        {
+            
+        }
         public SellerInventory(long productId, int count, int price, int? discountPercentage = null)
         {
             Guard(count, price);

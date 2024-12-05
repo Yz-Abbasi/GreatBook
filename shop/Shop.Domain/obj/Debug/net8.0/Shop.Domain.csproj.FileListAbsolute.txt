@@ -1,0 +1,16 @@
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\bin\Debug\net8.0\Shop.Domain.deps.json
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\bin\Debug\net8.0\Shop.Domain.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\bin\Debug\net8.0\Shop.Domain.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\bin\Debug\net8.0\Common.Domain.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\bin\Debug\net8.0\Common.Domain.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\Shop.Domain.csproj.AssemblyReference.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\Shop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\Shop.Domain.AssemblyInfoInputs.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\Shop.Domain.AssemblyInfo.cs
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\Shop.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\Shop.Domain.sourcelink.json
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\Shop.Dom.40843D02.Up2Date
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\Shop.Domain.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\refint\Shop.Domain.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\Shop.Domain.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\Shop.Domain\obj\Debug\net8.0\ref\Shop.Domain.dll

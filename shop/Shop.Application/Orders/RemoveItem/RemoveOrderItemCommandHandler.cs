@@ -10,6 +10,12 @@ namespace Shop.Application.Orders.RemoveItem
     internal class RemoveOrderItemCommandHandler : IBaseCommandHandler<RemoveOrderItemCommand>
     {
         private readonly IOrderRepository _repository;
+
+        public RemoveOrderItemCommandHandler(IOrderRepository repository)
+        {
+            _repository = repository;
+        }
+
         public async Task<OperationResult> Handle(RemoveOrderItemCommand request, CancellationToken cancellationToken)
         {
             var currentOrder = await _repository.GetCurrentUserOrder(request.UserId);

@@ -9,6 +9,9 @@ namespace Shop.Domain.RoleAgg
 {
     public class RolePermission : BaseEntity
     {
+        private RolePermission()
+        {
+        }
         public RolePermission(Permission permission)
         {
             Permission = permission;

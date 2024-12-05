@@ -62,6 +62,7 @@ namespace Shop.Infrastructure.Persistent.Ef.UserAgg
                 option.OwnsOne(t => t.PhoneNumber, config =>
                 {
                     config.Property(p => p.Phone)
+                        .HasColumnName("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(11);
                 });

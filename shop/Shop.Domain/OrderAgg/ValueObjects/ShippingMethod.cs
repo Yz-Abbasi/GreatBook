@@ -6,6 +6,7 @@ using Common.Domain;
 
 namespace Shop.Domain.OrderAgg.ValueObjects
 {
+    
     public class ShippingMethod : ValueObject
     {
         public ShippingMethod(string shippimngType, int shippingCost)

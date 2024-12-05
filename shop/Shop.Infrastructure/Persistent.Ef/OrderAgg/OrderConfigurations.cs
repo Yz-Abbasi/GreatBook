@@ -14,6 +14,9 @@ namespace Shop.Infrastructure.Persistent.Ef.OrderAgg
         public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder.ToTable("Order", "orders");
+            
+            builder.HasKey(b => b.Id);
+            builder.HasIndex(b => b.UserId);
 
             builder.OwnsOne(vo => vo.Discount, option =>
             {
@@ -24,6 +27,7 @@ namespace Shop.Infrastructure.Persistent.Ef.OrderAgg
             builder.OwnsOne(vo => vo.ShippingMethod, option =>
             {
                 option.Property(p => p.ShippimngType)
+                    .IsRequired(false)
                     .HasMaxLength(50);
             });
 

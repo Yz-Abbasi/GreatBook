@@ -1,0 +1,13 @@
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\bin\Debug\net8.0\Common.Domain.deps.json
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\bin\Debug\net8.0\Common.Domain.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\bin\Debug\net8.0\Common.Domain.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\Common.Domain.csproj.AssemblyReference.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\Common.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\Common.Domain.AssemblyInfoInputs.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\Common.Domain.AssemblyInfo.cs
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\Common.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\Common.Domain.sourcelink.json
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\Common.Domain.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\refint\Common.Domain.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\Common.Domain.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\Common\Common.Domain\obj\Debug\net8.0\ref\Common.Domain.dll

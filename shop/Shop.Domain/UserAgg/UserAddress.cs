@@ -23,6 +23,10 @@ namespace Shop.Domain.UserAgg
             NationalCode = nationalCode;
             IsActive = false;
         }
+        private UserAddress()
+        {
+            
+        }
 
         public long UserId { get; internal set; }
         public string Province { get; private set; }

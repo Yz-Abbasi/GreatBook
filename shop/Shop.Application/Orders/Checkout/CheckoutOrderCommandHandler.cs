@@ -7,6 +7,12 @@ namespace Shop.Application.Orders.Checkout
     public class CheckoutOrderCommandHandler : IBaseCommandHandler<CheckoutOrderCommand>
     {
         private readonly IOrderRepository _repository;
+
+        public CheckoutOrderCommandHandler(IOrderRepository repository)
+        {
+            _repository = repository;
+        }
+
         public async Task<OperationResult> Handle(CheckoutOrderCommand request, CancellationToken cancellationToken)
         {
             var currentOrder = await _repository.GetCurrentUserOrder(request.UserId);

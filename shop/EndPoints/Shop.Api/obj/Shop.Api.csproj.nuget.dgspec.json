@@ -1,0 +1,720 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\Shop.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Application\\Common.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Application\\Common.Application.csproj",
+        "projectName": "Common.Application",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Application\\Common.Application.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\Common.Domain.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\Common.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.6, )"
+            },
+            "HtmlSanitizer": {
+              "target": "Package",
+              "version": "[8.1.870, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\Common.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\Common.Domain.csproj",
+        "projectName": "Common.Domain",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\Common.Domain.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Query\\Common.Query.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Query\\Common.Query.csproj",
+        "projectName": "Common.Query",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Query\\Common.Query.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Query\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\Shop.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\Shop.Api.csproj",
+        "projectName": "Shop.Api",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\Shop.Api.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Config\\Shop.Config.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Config\\Shop.Config.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.30, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Application\\Shop.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Application\\Shop.Application.csproj",
+        "projectName": "Shop.Application",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Application\\Shop.Application.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Application\\Common.Application.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Application\\Common.Application.csproj"
+              },
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Domain\\Shop.Domain.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Domain\\Shop.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Config\\Shop.Config.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Config\\Shop.Config.csproj",
+        "projectName": "Shop.Config",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Config\\Shop.Config.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Config\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Presentation.Facade\\Shop.Presentation.Facade.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Presentation.Facade\\Shop.Presentation.Facade.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[10.4.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Domain\\Shop.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Domain\\Shop.Domain.csproj",
+        "projectName": "Shop.Domain",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Domain\\Shop.Domain.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\Common.Domain.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Domain\\Common.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Infrastructure\\Shop.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Infrastructure\\Shop.Infrastructure.csproj",
+        "projectName": "Shop.Infrastructure",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Infrastructure\\Shop.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Application\\Shop.Application.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Application\\Shop.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.30, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.30, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Presentation.Facade\\Shop.Presentation.Facade.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Presentation.Facade\\Shop.Presentation.Facade.csproj",
+        "projectName": "Shop.Presentation.Facade",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Presentation.Facade\\Shop.Presentation.Facade.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Presentation.Facade\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Application\\Shop.Application.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Application\\Shop.Application.csproj"
+              },
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Query\\Shop.Query.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Query\\Shop.Query.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Query\\Shop.Query.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Query\\Shop.Query.csproj",
+        "projectName": "Shop.Query",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Query\\Shop.Query.csproj",
+        "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Query\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Query\\Common.Query.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Query\\Common.Query.csproj"
+              },
+              "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Infrastructure\\Shop.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Shop.Infrastructure\\Shop.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

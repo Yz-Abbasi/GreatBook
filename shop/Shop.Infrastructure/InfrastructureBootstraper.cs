@@ -1,4 +1,6 @@
 
+using Common.Application.FileUtil.Interfaces;
+using Common.Application.FileUtil.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Shop.Domain.CategoryAgg;
@@ -35,11 +37,14 @@ namespace Shop.Infrastructure
             services.AddTransient<IBannerRepository, BannerRepository>();
             services.AddTransient<ISliderRepository, SliderRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ICommentRepository, CommentRepository>();
+
+            services.AddTransient<IFileService, FileService>();
 
             services.AddTransient(_ => new DapperContext(connectionString));
             services.AddDbContext<ShopContext>(option =>
             {
-                option.UseSqlServer();
+                option.UseSqlServer(connectionString);
             });
         }
     }

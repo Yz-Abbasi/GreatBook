@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Common.Application;
-using Common.Application.FileUtil.Services;
+using Common.Application.FileUtil.Interfaces;
 using Shop.Application._Utilities;
 using Shop.Domain.ProductAgg;
 using Shop.Domain.ProductAgg.Repository;
@@ -13,9 +13,9 @@ namespace Shop.Application.Products.AddImage
     public class AddProductImageCommandHandler : IBaseCommandHandler<AddProductImageCommand>
     {
         private readonly IProductRepository _repository;
-        private readonly FileService _fileService;
+        private readonly IFileService _fileService;
 
-        public AddProductImageCommandHandler(IProductRepository repository, FileService fileService)
+        public AddProductImageCommandHandler(IProductRepository repository, IFileService fileService)
         {
             _repository = repository;
             _fileService = fileService;

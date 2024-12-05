@@ -8,11 +8,12 @@ using Shop.Domain.OrderAgg.ValueObjects;
 
 namespace Shop.Infrastructure.Persistent.Ef.SiteEntities
 {
-    public class ShippingMethodConfiguration : IEntityTypeConfiguration<ShippingMethod>
-    {
-        public void Configure(EntityTypeBuilder<ShippingMethod> builder)
-        {
-            throw new NotImplementedException();
-        }
-    }
+    // public class ShippingMethodConfiguration : IEntityTypeConfiguration<ShippingMethod>
+    // {
+    //     public void Configure(EntityTypeBuilder<ShippingMethod> builder)
+    //     {
+    //         builder.Property(b => b.ShippimngType)
+    //             .HasMaxLength(120).IsRequired();
+    //     }
+    // }
 }

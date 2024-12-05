@@ -48,7 +48,7 @@ namespace Shop.Infrastructure.Persistent.Ef.CategoryAgg
 
                 config.Property(p => p.Canonical)
                     .HasMaxLength(300)
-                    .HasColumnName("MetaKeyWords");
+                    .HasColumnName("Canonical");
 
                 config.Property(p => p.Schema)
                     .HasColumnName("Schema");
