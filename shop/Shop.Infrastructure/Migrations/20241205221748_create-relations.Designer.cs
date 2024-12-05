@@ -12,8 +12,8 @@ using Shop.Infrastructure.Persistent.Ef;
 namespace Shop.Infrastructure.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20241205160038_init_database")]
-    partial class init_database
+    [Migration("20241205221748_create-relations")]
+    partial class createrelations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

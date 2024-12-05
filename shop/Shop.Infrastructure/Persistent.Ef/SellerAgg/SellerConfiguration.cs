@@ -30,6 +30,7 @@ namespace Shop.Infrastructure.Persistent.Ef.SellerAgg
 
                 option.HasKey(k => k.Id);
 
+                option.HasKey(k => k.Id);
                 option.HasIndex(i => i.ProductId);
                 option.HasIndex(i => i.SellerId);
             });
