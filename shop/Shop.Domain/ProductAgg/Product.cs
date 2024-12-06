@@ -18,7 +18,7 @@ namespace Shop.Domain.ProductAgg
         public string Description { get; private set; }
         public long Categoryid { get; private set; }
         public long SubCategoryid { get; private set; }
-        public long SecondarySubCategoryid { get; private set; }
+        public long? SecondarySubCategoryId { get; private set; }
         public string Slug { get; private set; }
         public SeoData SeoData { get; private set; }
         public List<ProductImage> Images { get; private set; }
@@ -29,7 +29,7 @@ namespace Shop.Domain.ProductAgg
         {
 
         }
-        public Product(string title, string imageName, string description, long categoryid, long subCategoryid, long secondarySubCategoryid, string slug, SeoData seoData,
+        public Product(string title, string imageName, string description, long categoryid, long subCategoryid, long? secondarySubCategoryId, string slug, SeoData seoData,
         IProductDomainService domainService)
         {
             Guard(title, slug, description, domainService);
@@ -38,13 +38,13 @@ namespace Shop.Domain.ProductAgg
             Description = description;
             Categoryid = categoryid;
             SubCategoryid = subCategoryid;
-            SecondarySubCategoryid = secondarySubCategoryid;
+            SecondarySubCategoryId = secondarySubCategoryId;
             Slug = slug.ToSlug();
             SeoData = seoData;
         }
 
 
-        public void EditProduct(string title, string description, long categoryid, long subCategoryid, long secondarySubCategoryid, string slug, SeoData seoData,
+        public void EditProduct(string title, string description, long categoryid, long subCategoryid, long? secondarySubCategoryId, string slug, SeoData seoData,
         IProductDomainService domainService)
         {
             Guard(title, slug, description, domainService);
@@ -53,7 +53,7 @@ namespace Shop.Domain.ProductAgg
             Description = description;
             Categoryid = categoryid;
             SubCategoryid = subCategoryid;
-            SecondarySubCategoryid = secondarySubCategoryid;
+            SecondarySubCategoryId = secondarySubCategoryId;
             Slug = slug.ToSlug();
             SeoData = seoData;
         }

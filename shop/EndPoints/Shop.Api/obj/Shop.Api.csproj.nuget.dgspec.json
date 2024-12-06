@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\Shop.Api.csproj": {}
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\Shop.Api.csproj": {}
   },
   "projects": {
     "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\Common\\Common.Application\\Common.Application.csproj": {
@@ -224,14 +224,14 @@
         }
       }
     },
-    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\Shop.Api.csproj": {
+    "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\Shop.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\Shop.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\Shop.Api.csproj",
         "projectName": "Shop.Api",
-        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\Shop.Api.csproj",
+        "projectPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\Shop.Api.csproj",
         "packagesPath": "C:\\Users\\Tabahkar Doozakh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\Endpoints\\Shop.Api\\obj\\",
+        "outputPath": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tabahkar Doozakh\\AppData\\Roaming\\NuGet\\NuGet.Config"
