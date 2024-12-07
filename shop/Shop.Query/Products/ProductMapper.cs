@@ -11,7 +11,7 @@ namespace Shop.Query.Products
 {
     public static class ProductMapper
     {
-        public static ProductDto Map(this Product product)
+        public static ProductDto? Map(this Product? product)
         {
             return new ProductDto()
             {
@@ -63,7 +63,7 @@ namespace Shop.Query.Products
             };
         }
         
-        public static async Task<ProductDto> SetCategories(this ProductDto product, ShopContext shopContext)
+        public static async Task SetCategories(this ProductDto product, ShopContext shopContext)
         {
             var category = await shopContext.Categories.Where(f => f.Id == product.Category.Id).Select(s => new ProductCategoryDto()
             {
@@ -106,9 +106,6 @@ namespace Shop.Query.Products
             if(subCategory != null)
                 product.SubCategory = subCategory;
 
-
-
-            return product;
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Common.Query")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e915d0b69d8f61aba0de6568d04c306909ce2b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28f89e1a86829fc8e38560db763a296f4fa7288c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Common.Query")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Common.Query")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
