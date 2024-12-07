@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Common.Query;
+using Microsoft.EntityFrameworkCore;
 using Shop.Infrastructure.Persistent.Ef;
 using Shop.Query.Products.DTOs;
 
@@ -35,7 +36,7 @@ namespace Shop.Query.Products.GetByFilter
 
             var model = new productFilterResult()
             {
-                Data = result.Skip(skip).Take(@params.Take).Select(s => s.MapListData()).ToList(),
+                Data = await result.Skip(skip).Take(@params.Take).Select(s => s.MapListData()).ToListAsync(cancellationToken),
                 FilterParam = @params
             };
 
