@@ -11,6 +11,17 @@ namespace Shop.Domain.UserAgg
 {
     public class User : AggregateRoot
     {
+        public string Name { get; private set; }
+        public string LastName { get; private set; }
+        public string PhoneNumber { get; private set; }
+        public string Password { get; private set; }
+        public string Email { get; private set; }
+        public Gender Gender { get; private set; }
+        public string AvatarName { get; private set; }
+        public List<UserRole> Roles { get; private set; }
+        public List<UserAddress> Addresses { get; private set; }
+        public List<Wallet> Wallets { get; private set; }
+        
         private User()
         {
             
@@ -29,17 +40,6 @@ namespace Shop.Domain.UserAgg
             Wallets= new();
             Addresses = new();
         }
-
-        public string Name { get; private set; }
-        public string LastName { get; private set; }
-        public string PhoneNumber { get; private set; }
-        public string Password { get; private set; }
-        public string Email { get; private set; }
-        public Gender Gender { get; private set; }
-        public string AvatarName { get; private set; }
-        public List<UserRole> Roles { get; private set; }
-        public List<UserAddress> Addresses { get; private set; }
-        public List<Wallet> Wallets { get; private set; }
 
         public void Edit(string name, string lastName, string phoneNumber, string email, Gender gender, IUserDomainService domainService)
         {
