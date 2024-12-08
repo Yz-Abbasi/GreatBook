@@ -7,5 +7,5 @@ using Shop.Query.Comments.DTOs;
 
 namespace Shop.Query.Comments.GetById
 {
-    internal record GetCommentByIdQuery(long CommentId) : IQuery<CommentDto?>;
+    public record GetCommentByIdQuery(long CommentId) : IQuery<CommentDto?>;
 }

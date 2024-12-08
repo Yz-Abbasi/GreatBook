@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Common.Query;
+using Microsoft.EntityFrameworkCore;
 using Shop.Infrastructure.Persistent.Ef;
 using Shop.Query.Users.DTOs;
 
@@ -17,9 +14,13 @@ namespace Shop.Query.Users.GetByPhoneNumber
             _context = context;
         }
 
-        public Task<UserDto?> Handle(GetUserByPhoneNumberQuery request, CancellationToken cancellationToken)
+        public async Task<UserDto?> Handle(GetUserByPhoneNumberQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var user = await _context.Users.FirstOrDefaultAsync(f => f.PhoneNumber == request.PhoneNumber, cancellationToken);
+            if(user == null)
+                return null;
+
+            return await user.Map().SetUserRoleTitles(_context);
         }
     }
 }

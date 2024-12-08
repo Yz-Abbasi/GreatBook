@@ -20,6 +20,7 @@
     <Folder Include="Orders\ChangeStatus\" />
     <Folder Include="Orders\Checkout\" />
     <Folder Include="Orders\DecreaseOrderItemCount\" />
+    <Folder Include="Orders\FinalizeOrder\" />
     <Folder Include="Orders\IncreaseOrderItemCount\" />
     <Folder Include="Orders\RemoveItem\" />
     <Folder Include="Products\" />
