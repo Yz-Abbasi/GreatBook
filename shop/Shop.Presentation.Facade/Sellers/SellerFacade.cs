@@ -1,12 +1,14 @@
 using Common.Application;
 using MediatR;
 using Shop.Application.Sellers.Create;
+using Shop.Application.Sellers.Edit;
 using Shop.Query.Sellers.DTOs;
+using Shop.Query.Sellers.GetByFilter;
 using Shop.Query.Sellers.GetById;
 
 namespace Shop.Presentation.Facade.Sellers
 {
-    public class SellerFacade
+    public class SellerFacade : ISellerFacade
     {
         private readonly IMediator _mediator;
 
@@ -20,7 +22,7 @@ namespace Shop.Presentation.Facade.Sellers
             return await _mediator.Send(command);
         }
         
-        public async Task<OperationResult> EditSeller(CreateSellerCommand command)
+        public async Task<OperationResult> EditSeller(EditSellerCommand command)
         {
             return await _mediator.Send(command);
         }
@@ -28,6 +30,16 @@ namespace Shop.Presentation.Facade.Sellers
         public async Task<SellerDto?> GetSellerById(long id)
         {
             return await _mediator.Send(new GetSellerByIdQuery(id));
+        }
+        
+        public async Task<SellerFilterResult> GetSellersByFilter(SellerFilterParams filterParams)
+        {
+            return await _mediator.Send(new GetSellerByFilterQuery(filterParams));
+        }
+
+        public Task<SellerDto?> GetSellerByUserId(long userId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

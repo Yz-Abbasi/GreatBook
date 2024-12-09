@@ -24,7 +24,7 @@ namespace Shop.Query.Sellers.GetById
             if(seller == null)
                 return null;
 
-            return seller.map();
+            return seller.Map();
         }
     }
 }

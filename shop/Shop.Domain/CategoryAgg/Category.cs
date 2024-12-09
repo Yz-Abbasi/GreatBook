@@ -21,7 +21,7 @@ namespace Shop.Domain.CategoryAgg
 
         private Category()
         {
-            
+            Childs = new List<Category>();
         }
         public Category(string title, string slugString, SeoData seoData, ICategoryDomainService service)
         {
@@ -31,6 +31,7 @@ namespace Shop.Domain.CategoryAgg
             Title = title;
             Slug = slug;
             SeoData = seoData;
+            Childs = new List<Category>();
         }
 
 

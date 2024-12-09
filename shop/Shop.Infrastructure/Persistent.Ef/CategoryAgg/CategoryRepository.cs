@@ -22,10 +22,7 @@ namespace Shop.Infrastructure.Persistent.Ef.CategoryAgg
             if(category == null)
                 return false;
 
-            var doesProductExist = await Context.Products
-                .AnyAsync(f => f.Categoryid == categoryId ||
-                                f.SubCategoryid == categoryId ||
-                                f.SecondarySubCategoryid == categoryId);
+            var doesProductExist = await Context.Products.AnyAsync(f => f.Categoryid == categoryId || f.SubCategoryid == categoryId || f.SecondarySubCategoryId == categoryId);
             if(doesProductExist == true)
                 return false;
 

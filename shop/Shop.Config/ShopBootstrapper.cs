@@ -13,6 +13,7 @@ using Shop.Domain.ProductAgg.DomainServices;
 using Shop.Domain.SellerAgg.Services;
 using Shop.Domain.UserAgg.Services;
 using Shop.Infrastructure;
+using Shop.Presentation.Facade;
 using Shop.Query.Categories.GetById;
 
 namespace Shop.Config;
@@ -34,5 +35,8 @@ namespace Shop.Config;
             services.AddTransient<ISellerDomainService, SellerDomainService>();
 
             services.AddValidatorsFromAssembly(typeof(CreateRoleCommandValidator).Assembly);
+
+            services.InitFacadeDependency();
+
         }
     }

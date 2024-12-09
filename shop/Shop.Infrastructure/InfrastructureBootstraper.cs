@@ -37,7 +37,6 @@ namespace Shop.Infrastructure
             services.AddTransient<IBannerRepository, BannerRepository>();
             services.AddTransient<ISliderRepository, SliderRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<ICommentRepository, CommentRepository>();
 
             services.AddTransient<IFileService, FileService>();
 

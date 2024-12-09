@@ -16,7 +16,7 @@ namespace Shop.Query.Categories.GetList
 
         public async Task<List<CategoryDto>> Handle(GetCategoryListQuery request, CancellationToken cancellationToken)
         {
-            var result = await _context.Categories.OrderByDescending(o => o.Id).ToListAsync(cancellationToken);
+            var result = await _context.Categories.Where(r => r.ParentId == null).Include(c => c.Childs).ThenInclude(c => c.Childs).OrderByDescending(o => o.Id).ToListAsync(cancellationToken);
 
             return result.MapCategory();
         }

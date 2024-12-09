@@ -9,6 +9,6 @@ namespace Shop.Domain.SellerAgg.Services
     {
         public bool CheckSellerInfo(Seller seller);
 
-        public bool NationalCodeExistsInDatabase();
+        public bool NationalCodeExistsInDatabase(string nationalCode);
     }
 }

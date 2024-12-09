@@ -8,14 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.RegisterShopDependency(connectionString);
-builder.Services.AddTransient<IFileService, FileService>();
 CommonBootstrapper.Init(builder.Services);
-InfrastructureBootstraper.Init(builder.Services, connectionString);
+builder.Services.AddTransient<IFileService, FileService>();
 
 
 var app = builder.Build();
@@ -29,12 +31,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.Map("/test", (app) =>
-{
-    
-});
-
 app.UseAuthorization();
+
 app.MapControllers();
 
 // var summaries = new[]
@@ -58,8 +56,3 @@ app.MapControllers();
 // .WithOpenApi();
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

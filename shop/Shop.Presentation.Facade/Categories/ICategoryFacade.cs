@@ -4,6 +4,7 @@ using Common.Application;
 using Shop.Application.Categories.AddChild;
 using Shop.Application.Categories.Create;
 using Shop.Application.Categories.Edit;
+using Shop.Application.Categories.Remove;
 using Shop.Query.Categories.DTOs;
 
 namespace Shop.Presentation.Facade.Categories
@@ -13,6 +14,7 @@ namespace Shop.Presentation.Facade.Categories
         Task<OperationResult> AddChild(AddChildCategoryCommand command);
         Task<OperationResult> Edit(EditCategoryCommand command);
         Task<OperationResult> Create(CreateCategoryCommand command);
+        Task<OperationResult> Remove(long categoryId);
 
         Task<CategoryDto> GetCategoryById(long id);
         Task<List<ChildCategoryDto>> GetCategoryByParentId(long parentId);

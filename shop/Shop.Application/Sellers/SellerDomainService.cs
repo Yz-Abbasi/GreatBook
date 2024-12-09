@@ -3,20 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Shop.Domain.SellerAgg;
+using Shop.Domain.SellerAgg.Repository;
 using Shop.Domain.SellerAgg.Services;
 
 namespace Shop.Application.Sellers
 {
     public class SellerDomainService : ISellerDomainService
     {
-        public bool CheckSellerInfo(Seller seller)
+        private readonly ISellerRepository _repository;
+
+        public SellerDomainService(ISellerRepository repository)
         {
-            throw new NotImplementedException();
+            _repository = repository;
         }
 
-        public bool NationalCodeExistsInDatabase()
+        public bool CheckSellerInfo(Seller seller)
         {
-            throw new NotImplementedException();
+            var sellerExists = _repository.Exists(r => r.NationalCode == seller.NationalCode || r.UserId == seller.UserId);
+            
+            return !sellerExists;
+        }
+
+        public bool NationalCodeExistsInDatabase(string nationalCode)
+        {
+            return _repository.Exists(r => r.NationalCode == nationalCode);
+
+
         }
     }
 }

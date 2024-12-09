@@ -42,7 +42,7 @@ namespace Shop.Domain.SellerAgg
         public void Edit(string shopName, string nationalCode, ISellerDomainService domainService)
         {
             Guard(shopName, nationalCode);
-            if(domainService.NationalCodeExistsInDatabase() == true)
+            if(domainService.NationalCodeExistsInDatabase(nationalCode) == true)
                 throw new InvalidDomainDataException("This National has already been used before!");
 
             ShopName = shopName;

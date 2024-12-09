@@ -8,7 +8,7 @@ using Shop.Query.Roles.GetByList;
 
 namespace Shop.Presentation.Facade.Roles
 {
-    public class RoleFacade
+    public class RoleFacade : IRoleFacade
     {
         private readonly IMediator _mediator;
 
