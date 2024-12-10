@@ -1,4 +1,6 @@
+using System.Net;
 using Common.Application;
+using Common.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Categories.AddChild;
 using Shop.Application.Categories.Create;
@@ -11,7 +13,7 @@ namespace Shop.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CategoryController : ControllerBase
+    public class CategoryController : ApiController
     {
         private readonly ICategoryFacade _categoryFacade;
 
@@ -21,67 +23,61 @@ namespace Shop.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<CategoryDto>>> GetCategories()
+        public async Task<ApiResult<List<CategoryDto>>> GetCategories()
         {
             var result = await _categoryFacade.GetCategories();
-
-            return Ok(result);
+            
+            return QueryResult(result);
         }
         
         [HttpGet("{categoryId}")]
-        public async Task<ActionResult<CategoryDto>> GetCategoryById(long categoryId)
+        public async Task<ApiResult<CategoryDto>> GetCategoryById(long categoryId)
         {
             var result = await _categoryFacade.GetCategoryById(categoryId);
 
-            return Ok(result);
+            return QueryResult(result);
         }
 
         [HttpGet("getChilds/{parentId}")]
-        public async Task<ActionResult<ChildCategoryDto>> GetCategoryByParentId(long parentId)
+        public async Task<ApiResult<List<ChildCategoryDto>>> GetCategoryByParentId(long parentId)
         {
             var result = await _categoryFacade.GetCategoryByParentId(parentId);
 
-            return Ok(result);
+            return QueryResult(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCategory(CreateCategoryCommand command)
+        public async Task<ApiResult<long>> CreateCategory(CreateCategoryCommand command)
         {
-            var result = await _categoryFacade.Create(command); 
-            if(result .Status == OperationResultStatus.Success)
-                return Ok(result);
-            else
-                return BadRequest(result.Message);
+            var result = await _categoryFacade.Create(command);
+            var url = Url.Action("CreateCategory", "Category", new{id = result.Data}, Request.Scheme);
+
+            return CommandResult(result, HttpStatusCode.Created, url);
         }
         
         [HttpPost("AddChild")]
-        public async Task<IActionResult> AddChildCategory(AddChildCategoryCommand command)
+        public async Task<ApiResult<long>> AddChildCategory(AddChildCategoryCommand command)
         {
-            var result = await _categoryFacade.AddChild(command); 
-            if(result .Status == OperationResultStatus.Success)
-                return Ok(result);
-            else
-                return BadRequest(result.Message);
+            var result = await _categoryFacade.AddChild(command);
+            var url = Url.Action("AddChildCategory", "Category", new{id = result.Data}, Request.Scheme);
+
+            return CommandResult(result, HttpStatusCode.Created, url);
         }
         
         [HttpPut]
-        public async Task<IActionResult> EditCategory(EditCategoryCommand command)
+        public async Task<ApiResult> EditCategory(EditCategoryCommand command)
         {
-            var result = await _categoryFacade.Edit(command); 
-            if(result .Status == OperationResultStatus.Success)
-                return Ok(result);
-            else
-                return BadRequest(result.Message);
+            var result = await _categoryFacade.Edit(command);
+
+            return CommandResult(result);
         }
 
         [HttpDelete("{categoryId}")]
-        public async Task<IActionResult> RemoveCategory(long categoryId)
+        public async Task<ApiResult> RemoveCategory(long categoryId)
         {
             var result = await _categoryFacade.Remove(categoryId);
-            if(result.Status == OperationResultStatus.Success)
-                return Ok(result);
-            else
-                return BadRequest(result.Message);
+
+            return CommandResult(result);
         }
     }
 }
