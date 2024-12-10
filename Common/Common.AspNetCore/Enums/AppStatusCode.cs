@@ -6,7 +6,8 @@ namespace Common.AspNetCore.Enums
         NotFound=2,
         BadRequest=3,
         LogicError=4,
-        UnAuthorized=5
+        UnAuthorized=5,
+        ServerError=6
 
     }
 }
