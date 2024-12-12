@@ -21,6 +21,7 @@ namespace Shop.Query.Users
                 Name = user.Name,
                 LastName = user.LastName,
                 PhoneNumber = user.PhoneNumber,
+                IsActive = user.IsActive,
                 Gender = user.Gender,
                 AvatarName = user.AvatarName,
                 Email = user.Email,

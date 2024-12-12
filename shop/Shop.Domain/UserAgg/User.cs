@@ -16,6 +16,7 @@ namespace Shop.Domain.UserAgg
         public string PhoneNumber { get; private set; }
         public string Password { get; private set; }
         public string Email { get; private set; }
+        public bool IsActive { get; private set; }
         public Gender Gender { get; private set; }
         public string AvatarName { get; private set; }
         public List<UserRole> Roles { get; private set; }
@@ -35,7 +36,7 @@ namespace Shop.Domain.UserAgg
             Password = password;
             Email = email;
             Gender = gender;
-            AvatarName = "avatardefault.png";
+            AvatarName = "avatar.png";
             Roles = new();
             Wallets= new();
             Addresses = new();
@@ -103,17 +104,18 @@ namespace Shop.Domain.UserAgg
 
         public void Guard(string email, string phoneNumber, IUserDomainService domainService)
         {
-            NullOrEmptyDomainDataException.CheckString(email, nameof(email));
             NullOrEmptyDomainDataException.CheckString(phoneNumber, nameof(phoneNumber));
+
+            if(!string.IsNullOrWhiteSpace(email))
+                if(email != Email)
+                    if(domainService.DoesEmailExist(email))
+                        throw new InvalidDomainDataException("Email already exists!");              
 
             if(phoneNumber.Length != 11)
                 throw new InvalidDomainDataException("Phone number is not valid!");
             if(email.IsValidEmail())
                 throw new InvalidDomainDataException("Email is not valid!");
 
-            if(email != Email)
-                if(domainService.DoesEmailExist(email))
-                    throw new InvalidDomainDataException("Email already exists!");                 
 
             if(phoneNumber != PhoneNumber)
                 if(domainService.DoesEmailExist(phoneNumber))

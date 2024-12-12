@@ -28,12 +28,12 @@ namespace Common.Application
                 Data = default(TData),
             };
         }
-        public static OperationResult<TData> Error(string message = ErrorMessage)
+        public static OperationResult<TData> Error(string message=ErrorMessage)
         {
             return new OperationResult<TData>()
             {
                 Status = OperationResultStatus.Error,
-                Title = "مشکلی در عملیات رخ داده",
+                Title = "A problem has occured.",
                 Data = default(TData),
                 Message = message
             };
@@ -41,9 +41,9 @@ namespace Common.Application
     }
     public class OperationResult
     {
-        public const string SuccessMessage = "عملیات با موفقیت انجام شد";
-        public const string ErrorMessage = "عملیات با شکست مواجه شد";
-        public const string NotFoundMessage = "اطلاعات یافت نشد";
+        public const string SuccessMessage = "Opeartion successful";
+        public const string ErrorMessage = "Operation failed";
+        public const string NotFoundMessage = "Info could not be found";
         public string Message { get; set; }
         public string Title { get; set; } = null;
         public OperationResultStatus Status { get; set; }

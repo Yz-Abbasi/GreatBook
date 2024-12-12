@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.30">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -22,7 +24,10 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\JwtUtil\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Auth\" />
     <Folder Include="ViewModels\Users\" />
   </ItemGroup>
 

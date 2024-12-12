@@ -98,3 +98,7 @@ C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api
 C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\Common.AspNetCore.dll
 C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\Common.AspNetCore.pdb
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll

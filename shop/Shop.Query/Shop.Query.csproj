@@ -42,6 +42,9 @@
     <Folder Include="SiteEntities\Sliders\GetById\" />
     <Folder Include="SiteEntities\Sliders\GetList\" />
     <Folder Include="Users\" />
+    <Folder Include="Users\Addresses\" />
+    <Folder Include="Users\Addresses\GetById\" />
+    <Folder Include="Users\Addresses\GetList\" />
     <Folder Include="Users\DTOs\" />
     <Folder Include="Users\GetByFilter\" />
     <Folder Include="Users\GetById\" />
