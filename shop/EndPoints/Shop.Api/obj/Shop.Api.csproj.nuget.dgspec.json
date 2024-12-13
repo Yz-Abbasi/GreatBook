@@ -359,6 +359,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "UAParser": {
+              "target": "Package",
+              "version": "[3.1.47, )"
             }
           },
           "imports": [

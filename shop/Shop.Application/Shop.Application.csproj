@@ -43,6 +43,7 @@
     <Folder Include="SiteEntities\Sliders\" />
     <Folder Include="Users\" />
     <Folder Include="Users\AddAddress\" />
+    <Folder Include="Users\AddToken\" />
     <Folder Include="Users\ChargeWallet\" />
     <Folder Include="Users\Create\" />
     <Folder Include="Users\DeleteAddress\" />

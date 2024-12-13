@@ -6,8 +6,11 @@ using Common.Domain.ValueObjects;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Api.Infrastructure.JwtUtil;
 using Shop.Api.ViewModels.Auth;
+using Shop.Application.Users.AddToken;
 using Shop.Application.Users.Register;
 using Shop.Presentation.Facade.Users;
+using Shop.Query.Users.DTOs;
+using UAParser;
 
 namespace Shop.Api.Controllers;
 public class AuthController : ApiController
@@ -22,26 +25,21 @@ public class AuthController : ApiController
     }
 
     [HttpPost("Login")]
-    public async Task<ApiResult<string?>> Login(LoginViewModel loginViewModel)
+    public async Task<ApiResult<LoginResultDto?>> Login(LoginViewModel loginViewModel)
     {
         var user = await _userFacade.GetUserByPhoneNumber(loginViewModel.PhoneNumber);
         if(user == null)
-            return CommandResult(OperationResult<string>.Error("User with the entered credentials doesn't exist!"));
+            return CommandResult(OperationResult<LoginResultDto>.Error("User with the entered credentials doesn't exist!"));
 
-        if(Sha256Hasher.Compare(user.Password, loginViewModel.Password) == false)
-            return CommandResult(OperationResult<string>.Error("User with the entered credentials doesn't exist!"));
+        if(Sha256Hasher.Compare(user.Password, loginViewModel.Password) != false)
+            return CommandResult(OperationResult<LoginResultDto>.Error("User with the password doesn't exist!"));// Change the message later for security purposes
 
         if(user.IsActive == false)
-            return CommandResult(OperationResult<string>.Error("Your user account is inactive!"));
+            return CommandResult(OperationResult<LoginResultDto>.Error("Your user account is inactive!"));
 
-        var token = JwtTokenBuilder.BuildToken(user, _configuration);
+        var loginResult = await AddTokenAndGenerateJwt(user);
 
-        return new ApiResult<string?>()
-        {
-            Data = token,
-            IsSuccessful = true,
-            MetaData = new()
-        };
+        return CommandResult(loginResult);
     }
 
     [HttpPost("Register")]
@@ -51,5 +49,27 @@ public class AuthController : ApiController
         var result = await _userFacade.RegisterUser(command);
 
         return CommandResult(result);
+    }
+
+    private async Task<OperationResult<LoginResultDto?>> AddTokenAndGenerateJwt(UserDto user)
+    {
+        var uaPrser = Parser.GetDefault();
+        var info = uaPrser.Parse(HttpContext.Request.Headers["user-agent"]);
+        var device = $"{info.Device.Family}/{info.OS.Family} {info.OS.Major}.{info.OS.Minor} - {info.UA.Family}";
+
+        var token = JwtTokenBuilder.BuildToken(user, _configuration);
+        var refreshToken = Guid.NewGuid().ToString();
+
+        var hashJwt = Sha256Hasher.Hash(token);
+        var hashRefreshJwt = Sha256Hasher.Hash(refreshToken);
+        var tokenResult = await _userFacade.AddToken(new AddUserTokenCommand(user.Id, hashJwt, hashRefreshJwt, DateTime.Now.AddDays(7), DateTime.Now.AddDays(8), device));
+        if(tokenResult.Status != OperationResultStatus.Success)
+            return OperationResult<LoginResultDto?>.Error();
+
+        return OperationResult<LoginResultDto?>.Success(new LoginResultDto()
+        {
+            Token = token,
+            RefreshToken = refreshToken
+        });
     }
 }

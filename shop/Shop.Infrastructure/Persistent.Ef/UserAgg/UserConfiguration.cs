@@ -16,6 +16,7 @@ namespace Shop.Infrastructure.Persistent.Ef.UserAgg
             builder.HasIndex(p => p.PhoneNumber).IsUnique();
             builder.HasIndex(p => p.Email).IsUnique();
 
+
             builder.Property(p => p.Email)
                 .IsRequired(false)
                 .HasMaxLength(80);
@@ -36,7 +37,26 @@ namespace Shop.Infrastructure.Persistent.Ef.UserAgg
                 .IsRequired()
                 .HasMaxLength(100);
 
-            builder.OwnsMany(t => t.Addresses, option =>
+
+            builder.OwnsMany(b => b.Tokens, option =>
+            {
+                option.ToTable("Tokens", "user");
+                option.HasKey(b => b.Id);
+
+                option.Property(p => p.HashJwtToken)
+                    .IsRequired()
+                    .HasMaxLength(250);
+                    
+                option.Property(p => p.HashRefreshToken)
+                    .IsRequired()
+                    .HasMaxLength(250);    
+
+                option.Property(p => p.Device)
+                    .IsRequired()
+                    .HasMaxLength(100);               
+            });
+
+            builder.OwnsMany(b => b.Addresses, option =>
             {
                 option.ToTable("Addresses", "user");
                 builder.HasIndex(p => p.Id).IsUnique();

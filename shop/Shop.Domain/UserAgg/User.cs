@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Clean_arch.Domain.Shared.Exceptions;
 using Common.Domain;
 using Shop.Domain.UserAgg.Enums;
@@ -15,13 +11,14 @@ namespace Shop.Domain.UserAgg
         public string LastName { get; private set; }
         public string PhoneNumber { get; private set; }
         public string Password { get; private set; }
-        public string Email { get; private set; }
+        public string ? Email { get; private set; }
         public bool IsActive { get; private set; }
         public Gender Gender { get; private set; }
         public string AvatarName { get; private set; }
-        public List<UserRole> Roles { get; private set; }
-        public List<UserAddress> Addresses { get; private set; }
-        public List<Wallet> Wallets { get; private set; }
+        public List<UserRole> Roles { get; }
+        public List<UserAddress> Addresses { get; }
+        public List<Wallet> Wallets { get; }
+        public List<UserToken> Tokens { get; }
         
         private User()
         {
@@ -36,10 +33,12 @@ namespace Shop.Domain.UserAgg
             Password = password;
             Email = email;
             Gender = gender;
+            IsActive = true;
             AvatarName = "avatar.png";
             Roles = new();
             Wallets= new();
             Addresses = new();
+            Tokens = new();
         }
 
         public void Edit(string name, string lastName, string phoneNumber, string email, Gender gender, IUserDomainService domainService)
@@ -54,7 +53,7 @@ namespace Shop.Domain.UserAgg
 
         public static User RegisterUser(string phoneNumber, string password, IUserDomainService domainService)
         {
-            return new User("", "", phoneNumber, password, "", Gender.None, domainService);
+            return new User("", "", phoneNumber, password, null, Gender.None, domainService);
         }
 
         public void AddAddress(UserAddress userAddress)
@@ -100,6 +99,18 @@ namespace Shop.Domain.UserAgg
         {
             NullOrEmptyDomainDataException.CheckString(avatarName, nameof(avatarName));
             AvatarName = avatarName;
+        }
+
+        public void AddToken(string hashJwtToken, string hashRefreshToken, DateTime tokenExpireDate, DateTime refreshTokenExpireDate, string device)
+        {
+            var activeTokenCount = Tokens.Count(c => c.RefreshTokenExpireDate > DateTime.Now);
+            if(activeTokenCount == 3)
+                throw new InvalidDomainDataException("Not allowed to use more than 4 devices");
+
+            var token = new UserToken(hashJwtToken, hashRefreshToken, tokenExpireDate, refreshTokenExpireDate, device);
+            token.UserId = Id;
+
+            Tokens.Add(token);
         }
 
         public void Guard(string email, string phoneNumber, IUserDomainService domainService)
