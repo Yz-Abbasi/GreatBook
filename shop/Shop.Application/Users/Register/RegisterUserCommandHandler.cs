@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Common.Application;
+using Common.Application.SecurityUtil;
 using Shop.Domain.UserAgg;
 using Shop.Domain.UserAgg.Repository;
 using Shop.Domain.UserAgg.Services;
@@ -22,7 +19,7 @@ namespace Shop.Application.Users.Register
 
         public async Task<OperationResult> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
         {
-            var user = User.RegisterUser(request.PhoneNumber.Phone, request.Password, _domainService);
+            var user = User.RegisterUser(request.PhoneNumber.Phone, Sha256Hasher.Hash(request.Password), _domainService);
 
             _repository.Add(user);
             await _repository.Save();

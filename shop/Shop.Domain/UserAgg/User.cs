@@ -54,7 +54,7 @@ namespace Shop.Domain.UserAgg
 
         public static User RegisterUser(string phoneNumber, string password, IUserDomainService domainService)
         {
-            return new User("", "", phoneNumber, password, null, Gender.None, domainService);
+            return new User("", "", phoneNumber, password, "", Gender.None, domainService);
         }
 
         public void AddAddress(UserAddress userAddress)

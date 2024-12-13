@@ -17,15 +17,15 @@ namespace Shop.Infrastructure.Persistent.Ef.UserAgg
             builder.HasIndex(p => p.Email).IsUnique();
 
             builder.Property(p => p.Email)
-                .IsRequired()
+                .IsRequired(false)
                 .HasMaxLength(80);
 
             builder.Property(p => p.Name)
-                .IsRequired()
+                .IsRequired(false)
                 .HasMaxLength(50);
 
             builder.Property(p => p.LastName)
-                .IsRequired()
+                .IsRequired(false)
                 .HasMaxLength(60);
 
             builder.Property(p => p.PhoneNumber)
@@ -34,7 +34,7 @@ namespace Shop.Infrastructure.Persistent.Ef.UserAgg
 
             builder.Property(p => p.Password)
                 .IsRequired()
-                .HasMaxLength(10);
+                .HasMaxLength(100);
 
             builder.OwnsMany(t => t.Addresses, option =>
             {
