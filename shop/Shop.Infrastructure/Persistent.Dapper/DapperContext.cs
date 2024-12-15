@@ -23,5 +23,6 @@ namespace Shop.Infrastructure.Persistent.Dapper
         public string UserAddress = "[user].Addresses";
         public string OrderItems = "[order].Items";
         public string Products = "[product].Products";
+        public string UserTokens = "[user].Tokens";
     }
 }

@@ -11,8 +11,13 @@ public class UserToken : BaseEntity
     public DateTime RefreshTokenExpireDate { get; private set; }
     public string Device { get; private set; }
 
+    private UserToken()
+    {
+        
+    }
     public UserToken(string hashJwtToken, string hashRefreshToken, DateTime tokenExpireDate, DateTime refreshTokenExpireDate, string device)
     {
+        Guard(hashJwtToken, hashRefreshToken, tokenExpireDate, refreshTokenExpireDate);
         HashJwtToken = hashJwtToken;
         HashRefreshToken = hashRefreshToken;
         TokenExpireDate = tokenExpireDate;
@@ -20,15 +25,15 @@ public class UserToken : BaseEntity
         Device = device;
     }
 
-    public void Guard()
+    public void Guard(string hashJwtToken, string hashRefreshToken, DateTime tokenExpireDate, DateTime refreshTokenExpireDate)
     {
-        NullOrEmptyDomainDataException.CheckString(HashJwtToken, nameof(HashJwtToken));
-        NullOrEmptyDomainDataException.CheckString(HashRefreshToken, nameof(HashRefreshToken));
+        NullOrEmptyDomainDataException.CheckString(hashJwtToken, nameof(HashJwtToken));
+        NullOrEmptyDomainDataException.CheckString(hashRefreshToken, nameof(HashRefreshToken));
 
-        if(TokenExpireDate < DateTime.Now)
+        if(tokenExpireDate < DateTime.Now)
             throw new InvalidDomainDataException("ExpireDate is invalid!");
 
-        if(RefreshTokenExpireDate < TokenExpireDate)
+        if(refreshTokenExpireDate < TokenExpireDate)
             throw new InvalidDomainDataException("Refresh token Expire Date is invalid!");
     }
 }
