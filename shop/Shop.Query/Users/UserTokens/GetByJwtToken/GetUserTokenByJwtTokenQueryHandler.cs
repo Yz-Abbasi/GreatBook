@@ -17,8 +17,8 @@ public class GetUserTokenByJwtTokenQueryHandler : IQueryHandler<GetUserTokenByJw
     public async Task<UserTokenDto> Handle(GetUserTokenByJwtTokenQuery request, CancellationToken cancellationToken)
     {
         using var connection = _dapperContext.CreateConnection();
-        var sql = $"SELECT TOP(1) * FROM {_dapperContext.UserTokens} WHERE HashJwtToken=@hashToken";
+        var sql = $"SELECT TOP(1) * FROM {_dapperContext.UserTokens} WHERE HashJwtToken=@hashJwtToken";
 
-        return await connection.QueryFirstOrDefaultAsync<UserTokenDto>(sql, new {hashRefreshToken = request.HashJwtToken});
+        return await connection.QueryFirstOrDefaultAsync<UserTokenDto>(sql, new {hashJwtToken = request.HashJwtToken});
     }
 }

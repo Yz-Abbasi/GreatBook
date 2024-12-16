@@ -4,6 +4,7 @@ using Common.AspNetCore;
 using Common.AspNetCore.Enums;
 using Common.Domain.ValueObjects;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Api.Infrastructure.JwtUtil;
 using Shop.Api.ViewModels.Auth;
@@ -11,6 +12,7 @@ using Shop.Application.Users.AddToken;
 using Shop.Application.Users.Register;
 using Shop.Application.Users.RemoveToken;
 using Shop.Presentation.Facade.Users;
+using Shop.Presentation.Facade.Users.Tokens;
 using Shop.Query.Users.DTOs;
 using UAParser;
 
@@ -18,12 +20,14 @@ namespace Shop.Api.Controllers;
 public class AuthController : ApiController
 {
     private readonly IUserFacade _userFacade;
+    private readonly IUserTokenFacade _tokenFacade;
     private IConfiguration _configuration;
 
-    public AuthController(IUserFacade userFacade, IConfiguration configuration)
+    public AuthController(IUserFacade userFacade, IConfiguration configuration, IUserTokenFacade tokenFacade)
     {
         _userFacade = userFacade;
         _configuration = configuration;
+        _tokenFacade = tokenFacade;
     }
 
     [HttpPost("Login")]
@@ -56,7 +60,7 @@ public class AuthController : ApiController
     [HttpPost("RefreshToken")]
     public async Task<ApiResult<LoginResultDto?>> RefreshToken(string refreshToken)
     {
-        var result = await _userFacade.GetUserTokenByRefreshToken(refreshToken);
+        var result = await _tokenFacade.GetUserTokenByRefreshToken(refreshToken);
         if(result == null)
             return CommandResult(OperationResult<LoginResultDto?>.NotFound());
 
@@ -66,7 +70,7 @@ public class AuthController : ApiController
         if(result.RefreshTokenExpireDate < DateTime.Now)
             return CommandResult(OperationResult<LoginResultDto?>.Error("Refresh token has expired!"));
 
-        await _userFacade.RemoveToken(new RemoveUserTokenCommand(result.UserId, result.Id));
+        await _tokenFacade.RemoveToken(new RemoveUserTokenCommand(result.UserId, result.Id));
 
         var user = await _userFacade.GetUserById(result.UserId);
         var loginResult = await AddTokenAndGenerateJwt(user);
@@ -85,7 +89,7 @@ public class AuthController : ApiController
 
         var hashJwt = Sha256Hasher.Hash(token);
         var hashRefreshJwt = Sha256Hasher.Hash(refreshToken);
-        var tokenResult = await _userFacade.AddToken(new AddUserTokenCommand(user.Id, hashJwt, hashRefreshJwt, DateTime.Now.AddDays(7), DateTime.Now.AddDays(8), device));
+        var tokenResult = await _tokenFacade.AddToken(new AddUserTokenCommand(user.Id, hashJwt, hashRefreshJwt, DateTime.Now.AddDays(7), DateTime.Now.AddDays(8), device));
         if(tokenResult.Status != OperationResultStatus.Success)
             return OperationResult<LoginResultDto?>.Error();
 
@@ -96,9 +100,17 @@ public class AuthController : ApiController
         });
     }
 
+    [Authorize]
+    [HttpDelete("Logout")]
     public async Task<ApiResult> Logout()
     {
-        var token = HttpContext.GetTokenAsync("access_token");
+        var token = await HttpContext.GetTokenAsync("access_token");
+
+        var result = await _tokenFacade.GetUserTokenByJwtToken(token);
+        if(result == null)
+            return CommandResult(OperationResult.NotFound());
+
+        await _tokenFacade.RemoveToken(new RemoveUserTokenCommand(result.UserId, result.Id));
 
         return CommandResult(OperationResult.Success());
     }

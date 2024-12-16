@@ -54,28 +54,5 @@ namespace Shop.Presentation.Facade.Users
         {
             return await _mediator.Send(command);
         }
-
-        public async Task<OperationResult> AddToken(AddUserTokenCommand command)
-        {
-            return await _mediator.Send(command);
-        }
-
-        public async Task<OperationResult> RemoveToken(RemoveUserTokenCommand command)
-        {
-            return await _mediator.Send(command);
-        }
-
-        public async Task<UserTokenDto?> GetUserTokenByRefreshToken(string refreshToken)
-        {
-            var hashRefreshToken = Sha256Hasher.Hash(refreshToken);
-
-            return await _mediator.Send(new GetUserTokenByRefreshTokenQuery(hashRefreshToken));
-        }
-        public async Task<UserTokenDto?> GetUserTokenByJwtToken(string jwtToken)
-        {
-            var hashJwtToken = Sha256Hasher.Hash(jwtToken);
-
-            return await _mediator.Send(new GetUserTokenByJwtTokenQuery(hashJwtToken));
-        }
     }
 }

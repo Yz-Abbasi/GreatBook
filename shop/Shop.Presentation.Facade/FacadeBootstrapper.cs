@@ -10,6 +10,7 @@ using Shop.Presentation.Facade.SiteEntities.Banner;
 using Shop.Presentation.Facade.SiteEntities.Slider;
 using Shop.Presentation.Facade.Users;
 using Shop.Presentation.Facade.Users.Addresses;
+using Shop.Presentation.Facade.Users.Tokens;
 
 namespace Shop.Presentation.Facade
 {
@@ -26,6 +27,7 @@ namespace Shop.Presentation.Facade
             services.AddScoped<IBannerFacade, BannerFacade>();
             services.AddScoped<ISliderFacade, SliderFacade>();
             services.AddScoped<IUserFacade, UserFacade>();
+            services.AddScoped<IUserTokenFacade, UserTokenFacade>();
 
             services.AddScoped<ISellerInventoryFacade, SellerInventoryFacade>();
             services.AddScoped<IUserAddressFacade, UserAddressFacade>();
