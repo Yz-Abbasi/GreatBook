@@ -2,8 +2,9 @@ using Common.Query;
 using Dapper;
 using Shop.Infrastructure.Persistent.Dapper;
 using Shop.Query.Users.DTOs;
+using Shop.Query.Users.UserTokens.GetByRefreshToken;
 
-namespace Shop.Query.Users.UserTokens;
+namespace Shop.Query.Users.UserTokens.GetBtRefreshToken;
 public class GetUserTokenByRefreshTokenQueryHandler : IQueryHandler<GetUserTokenByRefreshTokenQuery, UserTokenDto>
 {
     private readonly DapperContext _dapperContext;

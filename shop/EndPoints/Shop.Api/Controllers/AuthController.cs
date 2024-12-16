@@ -3,6 +3,7 @@ using Common.Application.SecurityUtil;
 using Common.AspNetCore;
 using Common.AspNetCore.Enums;
 using Common.Domain.ValueObjects;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Api.Infrastructure.JwtUtil;
 using Shop.Api.ViewModels.Auth;
@@ -93,5 +94,12 @@ public class AuthController : ApiController
             Token = token,
             RefreshToken = refreshToken
         });
+    }
+
+    public async Task<ApiResult> Logout()
+    {
+        var token = HttpContext.GetTokenAsync("access_token");
+
+        return CommandResult(OperationResult.Success());
     }
 }

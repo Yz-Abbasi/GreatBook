@@ -24,6 +24,7 @@
     <Folder Include="SiteEntities\Slider\" />
     <Folder Include="Users\" />
     <Folder Include="Users\Addresses\" />
+    <Folder Include="Users\Tokens\" />
   </ItemGroup>
 
 </Project>

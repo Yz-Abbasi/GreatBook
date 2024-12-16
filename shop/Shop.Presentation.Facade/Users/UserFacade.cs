@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Common.Application;
 using Common.Application.SecurityUtil;
 using MediatR;
@@ -14,7 +10,8 @@ using Shop.Query.Users.DTOs;
 using Shop.Query.Users.GetByFilter;
 using Shop.Query.Users.GetById;
 using Shop.Query.Users.GetByPhoneNumber;
-using Shop.Query.Users.UserTokens;
+using Shop.Query.Users.UserTokens.GetByRefreshToken;
+using Shop.Query.Users.UserTokens.GetByJwtToken;
 
 namespace Shop.Presentation.Facade.Users
 {
@@ -52,12 +49,6 @@ namespace Shop.Presentation.Facade.Users
             return await _mediator.Send(new GetUserByPhoneNumberQuery(phoneNumber));
         }
         
-        public async Task<UserTokenDto?> GetUserTokenByRefreshToken(string refreshToken)
-        {
-            var hashRefreshToken = Sha256Hasher.Hash(refreshToken);
-
-            return await _mediator.Send(new GetUserTokenByRefreshTokenQuery(hashRefreshToken));
-        }
 
         public async Task<OperationResult> RegisterUser(RegisterUserCommand command)
         {
@@ -72,6 +63,19 @@ namespace Shop.Presentation.Facade.Users
         public async Task<OperationResult> RemoveToken(RemoveUserTokenCommand command)
         {
             return await _mediator.Send(command);
+        }
+
+        public async Task<UserTokenDto?> GetUserTokenByRefreshToken(string refreshToken)
+        {
+            var hashRefreshToken = Sha256Hasher.Hash(refreshToken);
+
+            return await _mediator.Send(new GetUserTokenByRefreshTokenQuery(hashRefreshToken));
+        }
+        public async Task<UserTokenDto?> GetUserTokenByJwtToken(string jwtToken)
+        {
+            var hashJwtToken = Sha256Hasher.Hash(jwtToken);
+
+            return await _mediator.Send(new GetUserTokenByJwtTokenQuery(hashJwtToken));
         }
     }
 }
