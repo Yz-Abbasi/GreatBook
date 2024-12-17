@@ -7,6 +7,8 @@ using Shop.Application.Sellers.EditInventory;
 using Shop.Presentation.Facade.Sellers;
 using Shop.Presentation.Facade.Sellers.Inventories;
 using Shop.Query.Sellers.DTOs;
+using Shop.Api.Infrastructure.Security;
+using Shop.Domain.RoleAgg.Enums;
 
 namespace Shop.Api.Controllers;
 
@@ -23,7 +25,8 @@ public class SellerController : ApiController
 
 
     [HttpGet]
-    public async Task<ApiResult<SellerFilterResult>> GetById(SellerFilterParams filterParams)
+    [PermissionChecker(Permission.Seller_Management)]
+    public async Task<ApiResult<SellerFilterResult>> GetSellers(SellerFilterParams filterParams)
     {
         var result = await _sellerFacade.GetSellersByFilter(filterParams);
 
@@ -39,6 +42,7 @@ public class SellerController : ApiController
     }
 
     [HttpPost]
+    [PermissionChecker(Permission.Seller_Management)]
     public async Task<ApiResult> CreateSeller(CreateSellerCommand command)
     {
         var result = await _sellerFacade.CreateSeller(command);
@@ -47,6 +51,7 @@ public class SellerController : ApiController
     }
 
     [HttpPut]
+    [PermissionChecker(Permission.Seller_Management)]
     public async Task<ApiResult> EditSeller(EditSellerCommand command)
     {
         var result = await _sellerFacade.EditSeller(command);
@@ -55,6 +60,7 @@ public class SellerController : ApiController
     }
     
     [HttpPost("Inventory")]
+    [PermissionChecker(Permission.Add_Inventory)]
     public async Task<ApiResult> AddSellerInventory(AddInventoryCommand command)
     {
         var result = await _sellerInventoryFacade.AddInventory(command);
@@ -63,6 +69,7 @@ public class SellerController : ApiController
     }
     
     [HttpPut("Inventory")]
+    [PermissionChecker(Domain.RoleAgg.Enums.Permission.Edit_Inventory)]
     public async Task<ApiResult> EditSellerInventory(EditInventoryCommand command)
     {
         var result = await _sellerInventoryFacade.EditInventory(command);

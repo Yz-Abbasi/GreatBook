@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Infrastructure\" />
     <Folder Include="Infrastructure\JwtUtil\" />
     <Folder Include="ViewModels\" />
     <Folder Include="ViewModels\Auth\" />

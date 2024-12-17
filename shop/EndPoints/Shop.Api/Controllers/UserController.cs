@@ -4,9 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using Shop.Application.Users.Create;
 using Shop.Presentation.Facade.Users;
 using Shop.Query.Users.DTOs;
+using Shop.Api.Infrastructure.Security;
+using Shop.Domain.RoleAgg.Enums;
 
 namespace Shop.Api.Controllers;
 
+[PermissionChecker(Permission.User_Management)]
 public class UserController : ApiController
 {
     private readonly IUserFacade _userFacade;
