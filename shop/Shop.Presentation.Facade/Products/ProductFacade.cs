@@ -12,12 +12,18 @@ using Shop.Query.Products.DTOs;
 using Shop.Query.Products.GetByFilter;
 using Shop.Query.Products.GetById;
 using Shop.Query.Products.GetBySlug;
+using Shop.Query.Products.GetForShop;
 
 namespace Shop.Presentation.Facade.Products
 {
     public class ProductFacade : IProductFacade
     {
         private readonly IMediator _mediator;
+
+        public ProductFacade(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
 
         public async Task<OperationResult> CreateProduct(CreateProductCommand command)
         {
@@ -54,5 +60,9 @@ namespace Shop.Presentation.Facade.Products
             return await _mediator.Send(new GetProductByFilterQuery(filterParams));
         }
 
+        public async Task<ProductShopResult> GetProductsForShop(ProductShopFilterparam filterParams)
+        {
+            return await _mediator.Send(new GetProductsForShopQuery(filterParams));
+        }
     }
 }

@@ -21,11 +21,6 @@ namespace Shop.Presentation.Facade.Products
         Task<ProductDto?> GetProductById(long productId);
         Task<ProductDto?> GetProductBySlug(string slug);
         Task<productFilterResult> GetProductsByFilter(ProductFilterParam filterParams);
+        Task<ProductShopResult> GetProductsForShop(ProductShopFilterparam filterParams);
     }
-    
-    // public class SingleProductDto
-    // {
-    //     public ProductDto ProductDto { get; set; }
-    //     // public List<InventoryDto> Inventories { get; set; }
-    // }
 }

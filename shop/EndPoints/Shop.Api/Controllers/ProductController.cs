@@ -24,9 +24,16 @@ public class ProductController : ApiController
 
     [AllowAnonymous]
     [HttpGet]
-    public async Task<ApiResult<productFilterResult>> GetProductByFilter([FromQuery]ProductFilterParam filterParam)
+    public async Task<ApiResult<productFilterResult>> GetProductsByFilter([FromQuery]ProductFilterParam filterParam)
     {
         return QueryResult(await _productFacade.GetProductsByFilter(filterParam));
+    }
+
+    [AllowAnonymous]
+    [HttpGet("Shop")]
+    public async Task<ApiResult<ProductShopResult>> GetProductsForShopFilter([FromQuery]ProductShopFilterparam filterParam)
+    {
+        return QueryResult(await _productFacade.GetProductsForShop(filterParam));
     }
 
     [HttpGet("{productId}")]
