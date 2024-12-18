@@ -14,6 +14,7 @@ public enum Permission
     Order_Management,
     Comment_Management,
     Category_Management,
+    Seller_Panel,
     User_Management,
     Add_Inventory,
     Edit_Inventory,

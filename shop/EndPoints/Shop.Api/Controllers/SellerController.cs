@@ -9,6 +9,7 @@ using Shop.Presentation.Facade.Sellers.Inventories;
 using Shop.Query.Sellers.DTOs;
 using Shop.Api.Infrastructure.Security;
 using Shop.Domain.RoleAgg.Enums;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Shop.Api.Controllers;
 
@@ -34,9 +35,18 @@ public class SellerController : ApiController
     }
 
     [HttpGet("{sellerId}")]
-    public async Task<ApiResult<SellerDto?>> GetById(long sellerId)
+    public async Task<ApiResult<SellerDto?>> GeSellertById(long sellerId)
     {
         var result = await _sellerFacade.GetSellerById(sellerId);
+
+        return QueryResult(result);
+    }
+
+    [Authorize]
+    [HttpGet("current")]
+    public async Task<ApiResult<SellerDto?>> GetSeller()
+    {
+        var result = await _sellerFacade.GetSellerByUserId(User.GetUserId());
 
         return QueryResult(result);
     }
@@ -75,5 +85,33 @@ public class SellerController : ApiController
         var result = await _sellerInventoryFacade.EditInventory(command);
 
         return CommandResult(result);
+    }
+    
+    [HttpGet("Inventory")]
+    [PermissionChecker(Domain.RoleAgg.Enums.Permission.Seller_Panel)]
+    public async Task<ApiResult<List<InventoryDto>>> GetInventories()
+    {
+        var seller = await _sellerFacade.GetSellerByUserId(User.GetUserId());
+        if(seller == null)
+            return QueryResult(new List<InventoryDto>());
+
+        var result = await _sellerInventoryFacade.GetList(seller.Id);
+
+        return QueryResult(result);
+    }
+    
+    [HttpGet("Inventory/{inventoryId}")]
+    [PermissionChecker(Domain.RoleAgg.Enums.Permission.Seller_Panel)]
+    public async Task<ApiResult<InventoryDto>> GetInventories(long inventoryId)
+    {
+        var seller = await _sellerFacade.GetSellerByUserId(User.GetUserId());
+        if(seller == null)
+            return QueryResult(new InventoryDto());
+
+        var result = await _sellerInventoryFacade.GetById(inventoryId);
+        if(result == null || result.SellerId != seller.Id)
+            return QueryResult(new InventoryDto());
+
+        return QueryResult(result);
     }
 }

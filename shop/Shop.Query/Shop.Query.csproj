@@ -33,6 +33,10 @@
     <Folder Include="Sellers\DTOs\" />
     <Folder Include="Sellers\GetByFilter\" />
     <Folder Include="Sellers\GetById\" />
+    <Folder Include="Sellers\GetByUserId\" />
+    <Folder Include="Sellers\Inventories\" />
+    <Folder Include="Sellers\Inventories\GetById\" />
+    <Folder Include="Sellers\Inventories\GetList\" />
     <Folder Include="SiteEntities\" />
     <Folder Include="SiteEntities\Banners\" />
     <Folder Include="SiteEntities\Banners\GetById\" />

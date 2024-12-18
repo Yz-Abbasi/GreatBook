@@ -5,6 +5,7 @@ using Shop.Application.Sellers.Edit;
 using Shop.Query.Sellers.DTOs;
 using Shop.Query.Sellers.GetByFilter;
 using Shop.Query.Sellers.GetById;
+using Shop.Query.Sellers.GetByUserId;
 
 namespace Shop.Presentation.Facade.Sellers
 {
@@ -37,9 +38,9 @@ namespace Shop.Presentation.Facade.Sellers
             return await _mediator.Send(new GetSellerByFilterQuery(filterParams));
         }
 
-        public Task<SellerDto?> GetSellerByUserId(long userId)
+        public async Task<SellerDto?> GetSellerByUserId(long userId)
         {
-            throw new NotImplementedException();
+            return await _mediator.Send(new GetSellerByUserIdQuery(userId));
         }
     }
 }
