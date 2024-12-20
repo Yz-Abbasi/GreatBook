@@ -6,10 +6,13 @@ using Shop.Presentation.Facade.Users;
 using Shop.Query.Users.DTOs;
 using Shop.Api.Infrastructure.Security;
 using Shop.Domain.RoleAgg.Enums;
+using Microsoft.AspNetCore.Authorization;
+using Shop.Application.Users.EditAddress;
+using Shop.Application.Users.Edit;
 
 namespace Shop.Api.Controllers;
 
-[PermissionChecker(Permission.User_Management)]
+[Authorize]
 public class UserController : ApiController
 {
     private readonly IUserFacade _userFacade;
@@ -20,6 +23,7 @@ public class UserController : ApiController
     }
 
     [HttpGet]
+    [PermissionChecker(Permission.User_Management)]
     public async Task<ApiResult<UserFilterResult>> GetUsers([FromQuery]UserFilterParams filterParams)
     {
         var result = await _userFacade.GetUserByFilter(filterParams);
@@ -28,6 +32,7 @@ public class UserController : ApiController
     }
 
     [HttpGet("{userId}")]
+    [PermissionChecker(Permission.User_Management)]
     public async Task<ApiResult<UserDto?>> GetById(long userId)
     {
         var result = await _userFacade.GetUserById(userId);
@@ -35,10 +40,29 @@ public class UserController : ApiController
         return QueryResult(result);
     }
 
+    [Authorize]
+    [HttpGet("Current")]
+    public async Task<ApiResult<UserDto>> GetCurrentUser()
+    {
+        var result = await _userFacade.GetUserById(User.GetUserId());
+
+        return QueryResult(result);
+    }
+
+    [PermissionChecker(Permission.User_Management)]
     [HttpPost]
     public async Task<ApiResult> Create(CreateUserCommand command)
     {
         var result = await _userFacade.CreateUser(command);
+
+        return CommandResult(result);
+    }
+    
+    [PermissionChecker(Permission.User_Management)]
+    [HttpPut]
+    public async Task<ApiResult> Edit(EditUserCommand command)
+    {
+        var result = await _userFacade.EditUser(command);
 
         return CommandResult(result);
     }

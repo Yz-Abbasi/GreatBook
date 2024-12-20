@@ -81,8 +81,13 @@ public class AuthController : ApiController
     private async Task<OperationResult<LoginResultDto?>> AddTokenAndGenerateJwt(UserDto user)
     {
         var uaPrser = Parser.GetDefault();
-        var info = uaPrser.Parse(HttpContext.Request.Headers["user-agent"]);
-        var device = $"{info.Device.Family}/{info.OS.Family} {info.OS.Major}.{info.OS.Minor} - {info.UA.Family}";
+        var header = HttpContext.Request.Headers["user-agent"].ToString();
+        var device = "default device";
+        if(header != null)
+        {
+            var info = uaPrser.Parse(header);
+            device = $"{info.Device.Family}/{info.OS.Family} {info.OS.Major}.{info.OS.Minor} - {info.UA.Family}";
+        }
 
         var token = JwtTokenBuilder.BuildToken(user, _configuration);
         var refreshToken = Guid.NewGuid().ToString();
