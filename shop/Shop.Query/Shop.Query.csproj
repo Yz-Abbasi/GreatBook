@@ -20,6 +20,7 @@
     <Folder Include="Orders\DTOs\" />
     <Folder Include="Orders\GetByFilter\" />
     <Folder Include="Orders\GetById\" />
+    <Folder Include="Orders\GetCurrent\" />
     <Folder Include="Products\" />
     <Folder Include="Products\DTOs\" />
     <Folder Include="Products\GetByFilter\" />

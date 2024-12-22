@@ -1,10 +1,9 @@
-namespace Shop.Domain.OrderAgg.Enums
+namespace Shop.Domain.OrderAgg.Enums;
+
+public enum OrderStatus
 {
-    public enum OrderStatus
-    {
-        Pending,
-        Final,
-        Shipping,
-        Rejected
-    }
+    Pending,
+    Final,
+    Shipping,
+    Rejected
 }
