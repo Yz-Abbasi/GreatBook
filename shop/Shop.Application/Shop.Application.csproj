@@ -41,6 +41,7 @@
     <Folder Include="Sellers\Edit\" />
     <Folder Include="SiteEntities\Banners\" />
     <Folder Include="SiteEntities\Sliders\" />
+    <Folder Include="SiteEntities\Sliders\Delete\" />
     <Folder Include="Users\" />
     <Folder Include="Users\AddAddress\" />
     <Folder Include="Users\AddToken\" />
