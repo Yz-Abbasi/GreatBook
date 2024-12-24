@@ -1,4 +1,3 @@
-
 using Common.Query;
 using Shop.Query.Categories.DTOs;
 

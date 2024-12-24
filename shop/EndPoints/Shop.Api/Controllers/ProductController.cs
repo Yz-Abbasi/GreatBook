@@ -45,7 +45,7 @@ public class ProductController : ApiController
     }
     
     [AllowAnonymous]
-    [HttpGet("{slug}")]
+    [HttpGet("BySlug/{slug}")]
     public async Task<ApiResult<ProductDto?>> GetProductBySlug(string slug)
     {
         var product = await _productFacade.GetProductBySlug(slug);
