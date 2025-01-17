@@ -35,7 +35,5 @@ namespace Shop.Application.Products.Edit
             SeoData = seoData;
             Specifications = specifications;
         }
-
-        
     }
 }

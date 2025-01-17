@@ -52,7 +52,7 @@ public class SliderController : ApiController
         return CommandResult(result);
     }
 
-    [HttpPut]
+    [HttpDelete]
     public async Task<ApiResult> Delete(long sliderId)
     {
         var result = await _sliderFacade.DeleteSlider(sliderId);

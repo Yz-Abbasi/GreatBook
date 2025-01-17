@@ -94,7 +94,6 @@ namespace Shop.Query.Products
             product.Category = categories.First(r => r.Id == product.Category.Id);
 
             product.SubCategory = categories.First(r => r.Id == product.SubCategory.Id);
-
         }
     }
 }

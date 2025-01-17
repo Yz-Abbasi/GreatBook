@@ -16,7 +16,6 @@ public class ProductDto : BaseDto
     public SeoData SeoData { get; set; }
     public List<ProductImageDto> Images { get; set; }
     public List<ProductSpecificationDto> Specifications { get; set; }
-    
 }
 
 public class ProductCategoryDto // This is the category in the product and it doesn't have a child

@@ -5,6 +5,7 @@ using Common.AspNetCore.Enums;
 using Common.Domain.ValueObjects;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Api.Infrastructure.JwtUtil;
 using Shop.Api.ViewModels.Auth;
@@ -17,6 +18,8 @@ using Shop.Query.Users.DTOs;
 using UAParser;
 
 namespace Shop.Api.Controllers;
+
+// [EnableCors("ShopApi")]
 public class AuthController : ApiController
 {
     private readonly IUserFacade _userFacade;

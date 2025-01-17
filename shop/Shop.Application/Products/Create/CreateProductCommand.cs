@@ -17,6 +17,11 @@ public class CreateProductCommand : IBaseCommand
     public SeoData SeoData { get; private set; }
     public Dictionary<string, string> Specifications { get; private set; }
 
+    private CreateProductCommand()
+    {
+        
+    }
+
     public CreateProductCommand(string title, IFormFile imageFile, string description, long categoryid, long subCategoryid, long secondarySubCategoryid,
     string slug, SeoData seoData, Dictionary<string, string> specifications)
     {
@@ -30,6 +35,4 @@ public class CreateProductCommand : IBaseCommand
         SeoData = seoData;
         Specifications = specifications;
     }
-
-    
 }
