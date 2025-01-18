@@ -21,7 +21,7 @@ namespace Shop.Domain.UserAgg
             Family = family;
             PhoneNumber = phoneNumber;
             NationalCode = nationalCode;
-            IsActive = false;
+            IsActive = true;
         }
         private UserAddress()
         {
