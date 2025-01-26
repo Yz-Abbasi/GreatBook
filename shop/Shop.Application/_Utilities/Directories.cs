@@ -7,10 +7,10 @@ namespace Shop.Application._Utilities
 {
     public class Directories
     {
-        public const string productImages = "wwwroot/images/products";
-        public const string productGallery = "wwwroot/images/products/gallery";
-        public const string bannersImages = "wwwroot/images/banners";
-        public const string slidersImages = "wwwroot/images/sliders";
-        public const string avatarImages = "wwwroot/images/avatars";
+        public const string productImages = "src/assets/products";
+        public const string productGallery = "src/assets/products/gallery";
+        public const string bannersImages = "src/assets/banners";
+        public const string slidersImages = "src/assets/sliders";
+        public const string avatarImages = "src/assets/avatars";
     }
 }

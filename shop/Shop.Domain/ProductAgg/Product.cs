@@ -21,7 +21,7 @@ namespace Shop.Domain.ProductAgg
         public long? SecondarySubCategoryId { get; private set; }
         public string Slug { get; private set; }
         public SeoData SeoData { get; private set; }
-        public List<ProductImage> Images { get; private set; }
+        public List<ProductImage?> Images { get; private set; }
         public List<ProductSpecifcation> Specifications { get; private set; }
 
 

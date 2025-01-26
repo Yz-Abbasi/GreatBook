@@ -9,6 +9,7 @@ using Shop.Query.Products.DTOs;
 using Shop.Api.Infrastructure.Security;
 using Shop.Domain.RoleAgg.Enums;
 using Microsoft.AspNetCore.Authorization;
+using Shop.Api.ViewModels.Products;
 
 namespace Shop.Api.Controllers;
 
@@ -54,9 +55,20 @@ public class ProductController : ApiController
     }
 
     [HttpPost]
-    public async Task<ApiResult> CreateProduct([FromForm]CreateProductCommand command)
+    public async Task<ApiResult> CreateProduct([FromForm]CreateProductViewModel command)
     {
-        var result = await _productFacade.CreateProduct(command);
+        var result = await _productFacade.CreateProduct(new CreateProductCommand()
+        {
+            SeoData = command.SeoData.Map(),
+            Description = command.Description,
+            ImageFile = command.ImageFile,
+            Categoryid = command.CategoryId,
+            SubCategoryid = command.SubCategoryId,
+            SecondarySubCategoryid = command.SecondarySubCategoryId,
+            Slug = command.Slug,
+            Specifications = command.GetSpecification(),
+            Title = command.Title,
+        });
 
         return CommandResult(result);
     }
@@ -78,9 +90,20 @@ public class ProductController : ApiController
     }
     
     [HttpPut]
-    public async Task<ApiResult> EditProduct([FromForm]EditProductCommand command)
+    public async Task<ApiResult> EditProduct([FromForm]EditProductViewModel command)
     {
-        var result = await _productFacade.EditProduct(command);
+        var result = await _productFacade.EditProduct(new EditProductCommand(command.ProductId,
+            command.Title,
+            command.ImageFile,
+            command.Description,
+            command.CategoryId,
+            command.SubCategoryId,
+            command.SecondarySubCategoryId,
+            command.Slug,
+            command.SeoData.Map(),
+            command.GetSpecification())
+        {
+        });
 
         return CommandResult(result);
     }

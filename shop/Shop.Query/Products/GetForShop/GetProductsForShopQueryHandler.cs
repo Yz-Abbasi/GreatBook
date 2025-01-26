@@ -89,8 +89,8 @@ internal class GetProductsForShopQueryHandler : IQueryHandler<GetProductsForShop
             WHERE  A.RN = 1 and A.SellerStatus=@status  {conditions}";
 
 
-        var resultSql = @$"SELECT A.Slug,A.Id ,A.Title,A.Price,A.InventoryId,A.DiscountPercentage,A.ImageName
-            FROM (Select p.Title , i.Price  , i.Id as InventoryId , i.DiscountPercentage,p.ImageName , i.Count,
+        var resultSql = @$"SELECT A.Slug,A.Id ,A.Title,A.Price, A.Description, A.InventoryId,A.DiscountPercentage,A.ImageName
+            FROM (Select p.Title , p.Description, i.Price  , i.Id as InventoryId , i.DiscountPercentage,p.ImageName , i.Count,
                         p.CategoryId,p.SubCategoryId,p.SecondarySubCategoryId, p.Slug , p.Id as Id , s.SellerStatus
                             ,ROW_NUMBER() OVER(PARTITION BY p.Id ORDER BY {inventoryOrderBy}) AS RN
             From {_dapperContext.Products} p

@@ -1,34 +1,29 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Common.Query;
 using Microsoft.EntityFrameworkCore;
 using Shop.Infrastructure.Persistent.Ef;
 using Shop.Query.Products.DTOs;
 
-namespace Shop.Query.Products.GetById
+namespace Shop.Query.Products.GetById;
+
+public class GetProductByIdQueryhandler : IQueryHandler<GetProductByIdQuery, ProductDto?>
 {
-    public class GetProductByIdQueryhandler : IQueryHandler<GetProductByIdQuery, ProductDto?>
+    private readonly ShopContext _context;
+
+    public GetProductByIdQueryhandler(ShopContext context)
     {
-        private readonly ShopContext _context;
+        _context = context;
+    }
 
-        public GetProductByIdQueryhandler(ShopContext context)
-        {
-            _context = context;
-        }
+    public async Task<ProductDto?> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
+    {
+        var product = await _context.Products.FirstOrDefaultAsync(f => f.Id == request.ProductId, cancellationToken);
 
-        public async Task<ProductDto?> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
-        {
-            var product = await _context.Products.FirstOrDefaultAsync(f => f.Id == request.ProductId, cancellationToken);
+        var model = product.Map();
+        if(model == null)
+            return null;
+        
+        await model.SetCategories(_context);
 
-            var model = product.Map();
-            if(model == null)
-                return null;
-            
-            await model.SetCategories(_context);
-
-            return model;
-        }
+        return model;
     }
 }
