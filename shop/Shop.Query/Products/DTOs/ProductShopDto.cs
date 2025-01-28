@@ -14,6 +14,7 @@ public class ProductShopDto : BaseDto
     public string Slug { get; set; }
     public string Description { get; set; }
     public long InventoryId { get; set; }
+    public int BookCount { get; set; }
     public int Price { get; set; }
     public int DiscountPercentage { get; set; }
     public string ImageName { get; set; }
