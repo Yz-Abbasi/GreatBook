@@ -1,5 +1,3 @@
-
-
 using Common.Domain.ValueObjects;
 using Newtonsoft.Json;
 

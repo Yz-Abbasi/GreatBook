@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AngleSharp.Io;
 using Common.Application;
 using Common.Application.FileUtil.Interfaces;
@@ -11,56 +7,56 @@ using Shop.Domain.ProductAgg;
 using Shop.Domain.ProductAgg.DomainServices;
 using Shop.Domain.ProductAgg.Repository;
 
-namespace Shop.Application.Products.Edit
+namespace Shop.Application.Products.Edit;
+
+internal class EditProductCommandHandler : IBaseCommandHandler<EditProductCommand>
 {
-    internal class EditProductCommandHandler : IBaseCommandHandler<EditProductCommand>
+    private readonly IProductDomainService _domainService;
+    private readonly IProductRepository _repository;
+    private readonly IFileService _fileService;
+
+    public EditProductCommandHandler(IProductDomainService domainService, IProductRepository repository, IFileService fileService)
     {
-        private readonly IProductDomainService _domainService;
-        private readonly IProductRepository _repository;
-        private readonly IFileService _fileService;
+        _domainService = domainService;
+        _repository = repository;
+        _fileService = fileService;
+    }
 
-        public EditProductCommandHandler(IProductDomainService domainService, IProductRepository repository, IFileService fileService)
+    public async Task<OperationResult> Handle(EditProductCommand request, CancellationToken cancellationToken)
+    {
+        var product = await _repository.GetTracking(request.ProductId);
+        if(product == null)
+            return OperationResult.NotFound();
+
+        product.EditProduct(request.Title, request.Description, request.Categoryid, request.SubCategoryid, request.SecondarySubCategoryid, request.Slug, request.SeoData,
+        _domainService);
+
+        var oldImage = product.ImageName;
+
+        if(request.ImageFile != null)
         {
-            _domainService = domainService;
-            _repository = repository;
-            _fileService = fileService;
+            // var imageName = await _fileService.SaveFileAndGenerateName(request.ImageFile, Directories.productImages); File Service is corrupted
+            var imageName = "hardTry.png";
+            product.SetProductImage(imageName);
         }
 
-        public async Task<OperationResult> Handle(EditProductCommand request, CancellationToken cancellationToken)
+        var specifications = new List<ProductSpecifcation>();
+        request.Specifications.ToList().ForEach(specification =>
         {
-            var product = await _repository.GetTracking(request.ProductId);
-            if(product == null)
-                return OperationResult.NotFound();
+            specifications.Add(new ProductSpecifcation(specification.Key, specification.Value));
+        });
+        product.SetSpecification(specifications);
+        await _repository.Save();
+        RemoveOldImage(request.ImageFile, oldImage);
 
-            product.EditProduct(request.Title, request.Description, request.Categoryid, request.SubCategoryid, request.SecondarySubCategoryid, request.Slug, request.SeoData,
-            _domainService);
+        return OperationResult.Success();
+    }
 
-            var oldImage = product.ImageName;
-
-            if(request.ImageFile != null)
-            {
-                var imageName = await _fileService.SaveFileAndGenerateName(request.ImageFile, Directories.productImages);
-                product.SetProductImage(imageName);
-            }
-
-            var specifications = new List<ProductSpecifcation>();
-            request.Specifications.ToList().ForEach(specification =>
-            {
-                specifications.Add(new ProductSpecifcation(specification.Key, specification.Value));
-            });
-            product.SetSpecification(specifications);
-            await _repository.Save();
-            RemoveOldImage(request.ImageFile, oldImage);
-
-            return OperationResult.Success();
-        }
-
-        private void RemoveOldImage(IFormFile imageFile, string oldImageName)
+    private void RemoveOldImage(IFormFile imageFile, string oldImageName)
+    {
+        if(imageFile != null)
         {
-            if(imageFile != null)
-            {
-                _fileService.DeleteFile(Directories.productImages, oldImageName);
-            }
+            _fileService.DeleteFile(Directories.productImages, oldImageName);
         }
     }
 }

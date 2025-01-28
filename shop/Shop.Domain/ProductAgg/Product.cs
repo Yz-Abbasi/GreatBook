@@ -93,11 +93,11 @@ namespace Shop.Domain.ProductAgg
             NullOrEmptyDomainDataException.CheckString(description, nameof(description));
             NullOrEmptyDomainDataException.CheckString(slug, nameof(slug));
 
-            if(slug != Slug)
-            {
-                if(domainService.SlugDoesExist(slug.ToSlug()))
-                    throw new SlugIsDuplicateException();
-            }
+            // if(slug != Slug)
+            // {
+            //     if(domainService.SlugDoesExist(slug.ToSlug()))
+            //         throw new SlugIsDuplicateException();
+            // }
         }
     }
 }
