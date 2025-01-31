@@ -25,7 +25,7 @@ public class OrderController : ApiController
 
     [PermissionChecker(Permission.Order_Management)]
     [HttpGet]
-    public async Task<ApiResult<OrderFilterResult?>> GetOrderByFilter(OrderFilterParams filterParams)
+    public async Task<ApiResult<OrderFilterResult?>> GetOrderByFilter([FromQuery]OrderFilterParams filterParams)
     {
         var result = await _orderFacade.GetOrderByFilter(filterParams);
 

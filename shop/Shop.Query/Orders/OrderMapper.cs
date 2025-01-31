@@ -17,7 +17,7 @@ namespace Shop.Query.Orders;
                 Status = order.Status,
                 OrderAddress = order.OrderAddress,
                 Discount = order.Discount,
-                Items = new List<OrderItemDto>(),
+                Items = new(),
                 LastUpdate = order.LastUpdate,
                 ShippingMethod = order.ShippingMethod,
                 UserFullName = "",
@@ -28,15 +28,16 @@ namespace Shop.Query.Orders;
         public static async Task<List<OrderItemDto>> GetOrderItems(this OrderDto orderDto, DapperContext dapperContext)
         {
             using var connection = dapperContext.CreateConnection();
-            var sql = @$"SELECT s.ShopName , o.OrderId , o.InventoryId , o.Count , o.Price
-                        p.Title as ProductTitle , p.Slug as ProductSlug , p.ImageName as ProductImagename
-                        FROM {dapperContext.OrderItems} o 
-                        INNER JOIN {dapperContext.Inventories} i ON o.InventoryId=i.Id
-                        INNER JOIN {dapperContext.Products} p i.ProductId=p.Id
-                        INNER JOIN {dapperContext.Sellers} s i.SellerId=s.Id
-                        WHERE o.OrderId=@orderId";
+            var sql = @$"SELECT o.Id, s.ShopName ,o.OrderId,o.InventoryId,o.Count,o.price,
+                              p.Title as ProductTitle , p.Slug as ProductSlug ,
+                              p.ImageName as ProductImageName
+                        FROM {dapperContext.OrderItems} o
+                        Inner Join {dapperContext.Inventories} i on o.InventoryId=i.Id
+                        Inner Join {dapperContext.Products} p on i.ProductId=p.Id
+                        Inner Join {dapperContext.Sellers} s on i.SellerId=s.Id
+                        where o.OrderId=@orderId";
 
-            var result = await connection.QueryAsync<OrderItemDto>(sql, new {OrderId = orderDto.Id});
+            var result = await connection.QueryAsync<OrderItemDto>(sql, new {orderId = orderDto.Id});
 
             return result.ToList();
         }
