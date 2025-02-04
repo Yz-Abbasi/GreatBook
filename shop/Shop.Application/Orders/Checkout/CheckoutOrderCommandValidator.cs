@@ -29,8 +29,8 @@ namespace Shop.Application.Orders.Checkout
                 .MinimumLength(11).WithMessage("Phone number is invalid!");
 
             RuleFor(r => r.NationalCode)
-                .NotEmpty().NotNull().WithMessage(ValidationMessages.required("NationalCode")).MaximumLength(11).WithMessage("National Code is invalid!")
-                .MinimumLength(11).WithMessage("National Code is invalid!").ValidNationalId("National Id is invalid!");
+                .NotEmpty().NotNull().WithMessage(ValidationMessages.required("NationalCode")).MaximumLength(10).WithMessage("National Code is invalid!")
+                .MinimumLength(10).WithMessage("National Code is invalid!").ValidNationalId("National Id is invalid!");
 
             RuleFor(r => r.PostalAddress)
                 .NotEmpty().NotNull().WithMessage(ValidationMessages.required("PostalAddress"));

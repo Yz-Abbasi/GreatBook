@@ -12,6 +12,8 @@ namespace Shop.Application.Orders.AddItem
         {
             RuleFor(r => r.Count)
                 .GreaterThanOrEqualTo(1).WithMessage("Count should be bigger than 0!");
+            RuleFor(r => r.UserId)
+                .NotNull().WithMessage("UserId Can't be null");
         }
     }
 }

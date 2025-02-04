@@ -26,7 +26,7 @@ public class SellerController : ApiController
 
 
     [HttpGet]
-    [PermissionChecker(Permission.Seller_Management)]
+    // [PermissionChecker(Permission.Seller_Management)]
     public async Task<ApiResult<SellerFilterResult>> GetSellers(SellerFilterParams filterParams)
     {
         var result = await _sellerFacade.GetSellersByFilter(filterParams);
@@ -42,7 +42,6 @@ public class SellerController : ApiController
         return QueryResult(result);
     }
 
-    [Authorize]
     [HttpGet("current")]
     public async Task<ApiResult<SellerDto?>> GetSeller()
     {
@@ -79,7 +78,7 @@ public class SellerController : ApiController
     }
     
     [HttpPut("Inventory")]
-    [PermissionChecker(Domain.RoleAgg.Enums.Permission.Edit_Inventory)]
+    // [PermissionChecker(Domain.RoleAgg.Enums.Permission.Edit_Inventory)]
     public async Task<ApiResult> EditSellerInventory(EditInventoryCommand command)
     {
         var result = await _sellerInventoryFacade.EditInventory(command);
@@ -88,7 +87,7 @@ public class SellerController : ApiController
     }
     
     [HttpGet("Inventory")]
-    [PermissionChecker(Domain.RoleAgg.Enums.Permission.Seller_Panel)]
+    // [PermissionChecker(Domain.RoleAgg.Enums.Permission.Seller_Panel)]
     public async Task<ApiResult<List<InventoryDto>>> GetInventories()
     {
         var seller = await _sellerFacade.GetSellerByUserId(User.GetUserId());
@@ -101,7 +100,7 @@ public class SellerController : ApiController
     }
     
     [HttpGet("Inventory/{inventoryId}")]
-    [PermissionChecker(Domain.RoleAgg.Enums.Permission.Seller_Panel)]
+    // [PermissionChecker(Domain.RoleAgg.Enums.Permission.Seller_Panel)]
     public async Task<ApiResult<InventoryDto>> GetInventories(long inventoryId)
     {
         var seller = await _sellerFacade.GetSellerByUserId(User.GetUserId());

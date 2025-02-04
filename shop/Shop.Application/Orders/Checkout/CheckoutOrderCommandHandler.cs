@@ -1,32 +1,33 @@
 using Common.Application;
 using Shop.Domain.OrderAgg;
+using Shop.Domain.OrderAgg.Enums;
 using Shop.Domain.OrderAgg.Repository;
 
-namespace Shop.Application.Orders.Checkout
+namespace Shop.Application.Orders.Checkout;
+
+public class CheckoutOrderCommandHandler : IBaseCommandHandler<CheckoutOrderCommand>
 {
-    public class CheckoutOrderCommandHandler : IBaseCommandHandler<CheckoutOrderCommand>
+    private readonly IOrderRepository _repository;
+
+    public CheckoutOrderCommandHandler(IOrderRepository repository)
     {
-        private readonly IOrderRepository _repository;
+        _repository = repository;
+    }
 
-        public CheckoutOrderCommandHandler(IOrderRepository repository)
-        {
-            _repository = repository;
-        }
+    public async Task<OperationResult> Handle(CheckoutOrderCommand request, CancellationToken cancellationToken)
+    {
+        var currentOrder = await _repository.GetCurrentUserOrder(request.UserId);
+        if(currentOrder == null)
+            return OperationResult.NotFound();
 
-        public async Task<OperationResult> Handle(CheckoutOrderCommand request, CancellationToken cancellationToken)
-        {
-            var currentOrder = await _repository.GetCurrentUserOrder(request.UserId);
-            if(currentOrder == null)
-                return OperationResult.NotFound();
+        var address = new OrderAddress(request.Province, request.City, request.PostalCode,
+            request.PostalAddress, request.PhoneNumber, request.Name,
+            request.Family, request.NationalCode);
+            
+        currentOrder.Checkout(address);
+        currentOrder.ChangeStatus(OrderStatus.Shipping);
+        await _repository.Save();
 
-            var address = new OrderAddress(request.Province, request.City, request.PostalCode,
-                request.PostalAddress, request.PhoneNumber, request.Name,
-                request.Family, request.NationalCode);
-                
-            currentOrder.Checkout(address);
-            await _repository.Save();
-
-            return OperationResult.Success();
-        }
+        return OperationResult.Success();
     }
 }
