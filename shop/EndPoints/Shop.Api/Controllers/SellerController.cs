@@ -103,7 +103,8 @@ public class SellerController : ApiController
     // [PermissionChecker(Domain.RoleAgg.Enums.Permission.Seller_Panel)]
     public async Task<ApiResult<InventoryDto>> GetInventories(long inventoryId)
     {
-        var seller = await _sellerFacade.GetSellerByUserId(User.GetUserId());
+        // var seller = await _sellerFacade.GetSellerByUserId(User.GetUserId());
+        var seller = await _sellerFacade.GetSellerByUserId(7);
         if(seller == null)
             return QueryResult(new InventoryDto());
 

@@ -19,7 +19,8 @@ public class GetCurrentUserOrderQueryHandler : IQueryHandler<GetCurrentUserOrder
 
     public async Task<OrderDto> Handle(GetCurrentUserOrderQuery request, CancellationToken cancellationToken)
     {
-            var order = await _context.Orders.FirstOrDefaultAsync(f => f.UserId == request.UserId && (f.Status == Domain.OrderAgg.Enums.OrderStatus.Pending || f.Status == Domain.OrderAgg.Enums.OrderStatus.Shipping), cancellationToken);
+            var order = await _context.Orders.FirstOrDefaultAsync(f => f.UserId == request.UserId && (f.Status == Domain.OrderAgg.Enums.OrderStatus.Pending || 
+                f.Status == Domain.OrderAgg.Enums.OrderStatus.Shipping), cancellationToken);
             if(order == null)
                 return null;
 
