@@ -22,8 +22,9 @@ internal class CreateProductCommandHandler : IBaseCommandHandler<CreateProductCo
 
     public async Task<OperationResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
-        // var imageName = await _fileService.SaveFileAndGenerateName(request.ImageFile, Directories.productImages);
-        var imageName = "hardTry.png";
+        await _fileService.SaveFile(request.ImageFile, Directories.productImages);
+        var imageName = request.ImageFile.FileName;
+        // var imageName = "hardTry.png";
         var product = new Product(request.Title, imageName, request.Description, request.Categoryid, request.SubCategoryid, request.SecondarySubCategoryid, request.Slug,
         request.SeoData, _domainService);
 

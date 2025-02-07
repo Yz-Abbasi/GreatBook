@@ -35,8 +35,8 @@ internal class EditProductCommandHandler : IBaseCommandHandler<EditProductComman
 
         if(request.ImageFile != null)
         {
-            // var imageName = await _fileService.SaveFileAndGenerateName(request.ImageFile, Directories.productImages); File Service is corrupted
-            var imageName = "hardTry.png";
+            await _fileService.SaveFile(request.ImageFile, Directories.productImages);
+            var imageName = request.ImageFile.FileName;
             product.SetProductImage(imageName);
         }
 
