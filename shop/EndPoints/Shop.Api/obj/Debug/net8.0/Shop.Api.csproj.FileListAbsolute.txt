@@ -103,3 +103,4 @@ C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api
 C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\UAParser.dll
+C:\Users\Tabahkar Doozakh\OneDrive\Documents\Uni-Project\shop\EndPoints\Shop.Api\bin\Debug\net8.0\Shop.Api.staticwebassets.runtime.json

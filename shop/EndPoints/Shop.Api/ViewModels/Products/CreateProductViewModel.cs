@@ -34,3 +34,10 @@ public class SeoDataViewModel
         return new SeoData(MetaKeyWords, MetaDescription, MetaTitle, IndexPage, Canonical, Schema);
     }
 }
+
+public class AddProductImageViewModel
+{
+    public IFormFile ImageFile { get; set; }
+    public long ProductId { get; set; }
+    public int Sequence { get; set; }
+}

@@ -23,7 +23,9 @@ public class AddProductImageCommandHandler : IBaseCommandHandler<AddProductImage
         if(product == null)
             return OperationResult.NotFound();
 
-        var imageName = await _fileService.SaveFileAndGenerateName(request.ImageFile, Directories.productGallery);
+        await _fileService.SaveFile(request.ImageFile, Directories.productImages);
+        var imageName = request.ImageFile.FileName;
+        
         var productImage = new ProductImage(imageName, request.Sequence);
         product.AddImage(productImage);
         await _repository.Save();
