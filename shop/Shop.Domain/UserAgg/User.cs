@@ -134,7 +134,7 @@ public class User : AggregateRoot
 
         if(phoneNumber.Length != 11)
             throw new InvalidDomainDataException("Phone number is not valid!");
-        if(email.IsValidEmail())
+        if(email.IsValidEmail() == false)
             throw new InvalidDomainDataException("Email is not valid!");
 
 

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\images\\products\\1686295004335.jpg"
     },
     {
+      "Id": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\default.png",
+      "PackagePath": "staticwebassets\\images\\products\\default.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Shop.Api.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

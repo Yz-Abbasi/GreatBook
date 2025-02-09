@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/o796QiMiu5ZRpBR0prKzBrag2yfWhCU1IySjgtSVjk=",
+  "Hash": "8AUjnhrqPlaoS44qWSpNSwFTmoxNp3d/ZCNH3tsZmjQ=",
   "Source": "Shop.Api",
   "BasePath": "_content/Shop.Api",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\1686295004335.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\default.png",
+      "SourceId": "Shop.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\",
+      "BasePath": "_content/Shop.Api",
+      "RelativePath": "images/products/default.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\default.png"
     }
   ]
 }

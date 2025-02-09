@@ -9,6 +9,7 @@ using Shop.Domain.RoleAgg.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Shop.Application.Users.EditAddress;
 using Shop.Application.Users.Edit;
+using Shop.Api.ViewModels.Users;
 
 namespace Shop.Api.Controllers;
 
@@ -60,9 +61,18 @@ public class UserController : ApiController
     
     [PermissionChecker(Permission.User_Management)]
     [HttpPut]
-    public async Task<ApiResult> Edit(EditUserCommand command)
+    public async Task<ApiResult> Edit(EdituserViewModel command)
     {
-        var result = await _userFacade.EditUser(command);
+        var result = await _userFacade.EditUser(new EditUserCommand(
+            command.Id,
+            command.Name,
+            command.LastName,
+            command.PhoneNumber,
+            command.Password,
+            command.Email,
+            command.Avatar,
+            command.Gender
+        ));
 
         return CommandResult(result);
     }
