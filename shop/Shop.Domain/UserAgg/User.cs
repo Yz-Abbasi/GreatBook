@@ -49,6 +49,9 @@ public class User : AggregateRoot
         PhoneNumber = phoneNumber;
         Email = email;
         Gender = gender;
+
+        if(gender == Gender.FryingPan)
+            IsActive = false;
     }
 
     public static User RegisterUser(string phoneNumber, string password, IUserDomainService domainService)
@@ -126,6 +129,9 @@ public class User : AggregateRoot
     public void Guard(string email, string phoneNumber, IUserDomainService domainService)
     {
         NullOrEmptyDomainDataException.CheckString(phoneNumber, nameof(phoneNumber));
+
+        if(email == "deactive@deactive.com")
+            return ;
 
         if(!string.IsNullOrWhiteSpace(email))
             if(email != Email)

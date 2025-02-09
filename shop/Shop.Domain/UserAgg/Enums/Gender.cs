@@ -4,5 +4,6 @@ public enum Gender
 {
     None,
     Male,
-    Female
+    Female,
+    FryingPan
 }

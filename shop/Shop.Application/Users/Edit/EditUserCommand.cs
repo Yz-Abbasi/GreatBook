@@ -12,7 +12,8 @@ public class EditUserCommand : IBaseCommand
         Name = name;
         LastName = lastName;
         PhoneNumber = phoneNumber;
-        Password = password;
+        if (password != null)
+            Password = password;
         Email = email;
         Avatar = avatar;
         Gender = gender;
@@ -22,7 +23,7 @@ public class EditUserCommand : IBaseCommand
     public string Name { get; private set; }
     public string LastName { get; private set; }
     public string PhoneNumber { get; private set; }
-    public string Password { get; private set; }
+    public string? Password { get; private set; }
     public string Email { get; private set; }
     public IFormFile? Avatar { get; private set; }
     public Gender Gender { get; private set; }

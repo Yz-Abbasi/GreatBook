@@ -41,6 +41,7 @@ namespace Shop.Application.Users.Edit
             DeleteOldAvatar(request.Avatar, oldAvatar);
 
             await _repository.Save();
+            
             return OperationResult.Success();
         }
 
