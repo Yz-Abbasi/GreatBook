@@ -17,7 +17,7 @@ public class GetSellerInventoryListQueryHandler : IQueryHandler<GetSellerInvento
     public async Task<List<InventoryDto>> Handle(GetSellerInventoryListQuery request, CancellationToken cancellationToken)
     {
         var connection = _dapperContext.CreateConnection();
-        var inventorySql = @$"SELECT i.Id, Sellerid, ProductId, Count, Price, DiscountPercentage, i.CreationDate, s.ShopName, p.Title as ProductTitle, p.Imagename as ProductImage
+        var inventorySql = @$"SELECT  i.Id, ProductId, Count, Price, DiscountPercentage, i.CreationDate, s.ShopName, p.Title as ProductTitle, p.Imagename as ProductImage
                      FROM {_dapperContext.Inventories} i INNER JOIN {_dapperContext.Sellers} s ON i.SellerId=s.Id INNER JOIN {_dapperContext.Products} p ON i.ProductId=p.id
                      WHERE i.SellerId=@sellerId";
 

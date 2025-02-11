@@ -10,7 +10,7 @@ public class EditInventoryCommand : IBaseCommand
     public int Price { get; private set; }
     public int? DiscountPercentage { get; private set; }
 
-
+// NOTE : editing inventory requires productId instead of inventoryId, find the mistake if time is available 
     public EditInventoryCommand(long sellerId, long inventoryId, int count, int price, int? discountPercentage)
     {
         SellerId = sellerId;

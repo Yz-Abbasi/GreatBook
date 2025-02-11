@@ -66,7 +66,7 @@ public class OrderController : ApiController
         return CommandResult(result);
     }
     
-    [HttpPut("orderItem/decreaseCount")]
+    [HttpPut("orderItem/increaseCount")]
     public async Task<ApiResult> IncreaseOrderItemCount(IncreaseOrderItemCountCommand command)
     {
         var result = await _orderFacade.IncreaseOrderItemCount(command);
@@ -74,7 +74,7 @@ public class OrderController : ApiController
         return CommandResult(result);
     }
     
-    [HttpPut("orderItem/increaseCount")]
+    [HttpPut("orderItem/decreaseCount")]
     public async Task<ApiResult> DecreaseOrderItemCount(DecreaseOrderItemCountCommand commnd)
     {
         var result = await _orderFacade.DecreaseOrderItemCount(commnd);

@@ -33,18 +33,18 @@ public class OrderItem : BaseEntity
 
     public void IncreaseCount(int count)
     {
-        Count += count;
+        Count = count + 1;
     }
     
     public void DecreaseCount(int count)
     {
         if(Count == 1)
-            return ;
+            Count = 1;
 
         if(Count - count <= 0)
-            return ;
+            Count = 1;
             
-        Count -= count;
+        Count = count - 1;
     }
 
     public void SetPrice(int newPrice)

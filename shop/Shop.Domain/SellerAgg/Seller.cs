@@ -57,9 +57,9 @@ public class Seller : AggregateRoot
         Inventories.Add(inventory);
     }
     
-    public void EditInventory(long inventoryId, int count, int price, int? discountPercentage)
+    public void EditInventory(long productId, int count, int price, int? discountPercentage)
     {
-        var selectedInventory = Inventories.FirstOrDefault(f => f.ProductId == inventoryId);
+        var selectedInventory = Inventories.FirstOrDefault(f => f.ProductId == productId);
         if(selectedInventory == null)
             throw new InvalidDomainDataException("Inventory can not be found!");
 

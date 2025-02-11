@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Common.Query;
 
 namespace Shop.Query.Sellers.DTOs
 {
-    public class InventoryDto
+    public class InventoryDto : BaseDto
     {
         public long SellerId { get; set; }
         public string ShopName { get; set; }

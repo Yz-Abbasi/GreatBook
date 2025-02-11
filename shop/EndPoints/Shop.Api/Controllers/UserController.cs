@@ -59,7 +59,7 @@ public class UserController : ApiController
         return CommandResult(result);
     }
     
-    [PermissionChecker(Permission.User_Management)]
+    // [PermissionChecker(Permission.User_Management)] 
     [HttpPut]
     public async Task<ApiResult> Edit(EdituserViewModel command)
     {

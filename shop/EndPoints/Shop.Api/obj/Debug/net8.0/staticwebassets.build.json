@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8AUjnhrqPlaoS44qWSpNSwFTmoxNp3d/ZCNH3tsZmjQ=",
+  "Hash": "Se9WauQlvRPdWnIoRrfdQO3v1Nj+ZtqwaWlK5eWR2sA=",
   "Source": "Shop.Api",
   "BasePath": "_content/Shop.Api",
   "Mode": "Default",
@@ -36,12 +36,12 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\1686295004335.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\default.png",
+      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\1698758465774-min (1).jpg",
       "SourceId": "Shop.Api",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\",
       "BasePath": "_content/Shop.Api",
-      "RelativePath": "images/products/default.png",
+      "RelativePath": "images/products/1698758465774-min (1).jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,7 +52,64 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\default.png"
+      "OriginalItemSpec": "wwwroot\\images\\products\\1698758465774-min (1).jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\ER diagram for IMDB.png",
+      "SourceId": "Shop.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\",
+      "BasePath": "_content/Shop.Api",
+      "RelativePath": "images/products/ER diagram for IMDB.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\ER diagram for IMDB.png"
+    },
+    {
+      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\harryP.png",
+      "SourceId": "Shop.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\",
+      "BasePath": "_content/Shop.Api",
+      "RelativePath": "images/products/harryP.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\harryP.png"
+    },
+    {
+      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\mock key.jpg",
+      "SourceId": "Shop.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\",
+      "BasePath": "_content/Shop.Api",
+      "RelativePath": "images/products/mock key.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\mock key.jpg"
     }
   ]
 }

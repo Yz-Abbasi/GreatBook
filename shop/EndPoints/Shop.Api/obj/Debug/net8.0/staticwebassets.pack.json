@@ -5,8 +5,20 @@
       "PackagePath": "staticwebassets\\images\\products\\1686295004335.jpg"
     },
     {
-      "Id": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\default.png",
-      "PackagePath": "staticwebassets\\images\\products\\default.png"
+      "Id": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\1698758465774-min (1).jpg",
+      "PackagePath": "staticwebassets\\images\\products\\1698758465774-min (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\ER diagram for IMDB.png",
+      "PackagePath": "staticwebassets\\images\\products\\ER diagram for IMDB.png"
+    },
+    {
+      "Id": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\harryP.png",
+      "PackagePath": "staticwebassets\\images\\products\\harryP.png"
+    },
+    {
+      "Id": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\mock key.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\mock key.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Shop.Api.Microsoft.AspNetCore.StaticWebAssets.props",
