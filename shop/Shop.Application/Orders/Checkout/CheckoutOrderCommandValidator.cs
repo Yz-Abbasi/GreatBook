@@ -30,7 +30,7 @@ namespace Shop.Application.Orders.Checkout
 
             RuleFor(r => r.NationalCode)
                 .NotEmpty().NotNull().WithMessage(ValidationMessages.required("NationalCode")).MaximumLength(10).WithMessage("National Code is invalid!")
-                .MinimumLength(10).WithMessage("National Code is invalid!").ValidNationalId("National Id is invalid!");
+                .MinimumLength(9).WithMessage("National Code is invalid!");
 
             RuleFor(r => r.PostalAddress)
                 .NotEmpty().NotNull().WithMessage(ValidationMessages.required("PostalAddress"));

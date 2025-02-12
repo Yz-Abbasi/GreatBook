@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Se9WauQlvRPdWnIoRrfdQO3v1Nj+ZtqwaWlK5eWR2sA=",
+  "Hash": "xnbVk+t7GeCgKH4YU043hUzmCV8CCidizZyk5TJL5CQ=",
   "Source": "Shop.Api",
   "BasePath": "_content/Shop.Api",
   "Mode": "Default",
@@ -36,12 +36,12 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\1686295004335.jpg"
     },
     {
-      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\1698758465774-min (1).jpg",
+      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\defaultBook.png",
       "SourceId": "Shop.Api",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\",
       "BasePath": "_content/Shop.Api",
-      "RelativePath": "images/products/1698758465774-min (1).jpg",
+      "RelativePath": "images/products/defaultBook.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,7 +52,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\1698758465774-min (1).jpg"
+      "OriginalItemSpec": "wwwroot\\images\\products\\defaultBook.png"
     },
     {
       "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\ER diagram for IMDB.png",
@@ -74,25 +74,6 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\ER diagram for IMDB.png"
     },
     {
-      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\harryP.png",
-      "SourceId": "Shop.Api",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\",
-      "BasePath": "_content/Shop.Api",
-      "RelativePath": "images/products/harryP.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\harryP.png"
-    },
-    {
       "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\mock key.jpg",
       "SourceId": "Shop.Api",
       "SourceType": "Discovered",
@@ -110,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\mock key.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\images\\products\\stick_actor_uml.jpg",
+      "SourceId": "Shop.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tabahkar Doozakh\\OneDrive\\Documents\\Uni-Project\\shop\\EndPoints\\Shop.Api\\wwwroot\\",
+      "BasePath": "_content/Shop.Api",
+      "RelativePath": "images/products/stick_actor_uml.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\stick_actor_uml.jpg"
     }
   ]
 }
